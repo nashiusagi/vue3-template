@@ -1,0 +1,68 @@
+---
+name: ci
+
+on:
+  push:
+    branches:
+      -  feature/**
+
+env:
+  TZ: Asia/Tokyo
+  YARN_CACHE_FOLDER: .cache/yarn
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: code checkout
+        uses: actions/checkout@v3
+    
+      - name: node setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: v16.15
+          cache: yarn
+    
+      - name: restore cache
+        id: restore-cache
+        uses: actions/cache/restore@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+
+      - name: install dependent modules
+        if: steps.restore-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
+
+      - name: cache modules
+        if: steps.restore-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+    
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: code checkout
+        uses: actions/checkout@v3
+    
+      - name: node setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: v16.15
+          cache: yarn
+    
+      - name: restore cache
+        id: restore-cache
+        uses: actions/cache/restore@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+
+      - name: exit if cache does not hit
+        if: steps.restore-cache.outputs.cache-hit != 'true'
+        run: exit 1 
+
+      - name: build
+        run: yarn build:dev
