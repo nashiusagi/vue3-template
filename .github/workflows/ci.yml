@@ -28,7 +28,7 @@ jobs:
         uses: actions/cache/restore@v3
         with:
           path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
 
       - name: install dependent modules
         if: steps.restore-cache.outputs.cache-hit != 'true'
@@ -36,13 +36,14 @@ jobs:
 
       - name: cache modules
         if: steps.restore-cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@3
+        uses: actions/cache/save@v3
         with:
           path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
     
   build:
     runs-on: ubuntu-latest
+    needs: setup
     steps:
       - name: code checkout
         uses: actions/checkout@v3
@@ -58,7 +59,7 @@ jobs:
         uses: actions/cache/restore@v3
         with:
           path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
 
       - name: exit if cache does not hit
         if: steps.restore-cache.outputs.cache-hit != 'true'
