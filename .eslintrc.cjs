@@ -3,10 +3,12 @@ require("@rushstack/eslint-patch/modern-module-resolution");
 module.exports = {
   root: true,
 
+  // global変数の設定
   env: {
     node: true,
   },
 
+  // プラグイン追加
   extends: [
     "plugin:vue/vue3-essential",
     "@vue/eslint-config-airbnb-with-typescript",
@@ -49,6 +51,13 @@ module.exports = {
       "error",
       {
         devDependencies: true,
+      },
+    ],
+    "prettier/prettier": [
+      "off",
+      {
+        "singleQuote": false, // single quoteを強制にはしない
+        "semi": false, // セミコロンを強制しない
       },
     ],
   },
