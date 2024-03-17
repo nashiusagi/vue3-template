@@ -8,7 +8,7 @@ on:
 
 env:
   TZ: Asia/Tokyo
-  YARN_CACHE_FOLDER: .cache/yarn
+  YARN_CACHE_FOLDER: .app/.cache/yarn
 
 jobs:
   setup:
@@ -25,13 +25,14 @@ jobs:
         with:
           node-version: v16.15
           cache: yarn
+          cache-dependency-path: ./app/yarn.lock
     
       - name: restore cache
         id: restore-cache
         uses: actions/cache/restore@v3
         with:
           path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('./app/yarn.lock') }}
 
       - name: install dependent modules
         if: steps.restore-cache.outputs.cache-hit != 'true'
@@ -42,10 +43,13 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('./app/yarn.lock') }}
     
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
     needs: setup
     steps:
       - name: code checkout
@@ -56,13 +60,14 @@ jobs:
         with:
           node-version: v16.15
           cache: yarn
+          cache-dependency-path: ./app/yarn.lock
     
       - name: restore cache
         id: restore-cache
         uses: actions/cache/restore@v3
         with:
           path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('./app/yarn.lock') }}
 
       - name: exit if cache does not hit
         if: steps.restore-cache.outputs.cache-hit != 'true'
