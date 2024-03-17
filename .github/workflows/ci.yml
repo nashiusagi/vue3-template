@@ -13,22 +13,26 @@ env:
 jobs:
   setup:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
     steps:
       - name: code checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
     
       - name: node setup
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: v16.15
+          node-version: v20
           cache: yarn
+          cache-dependency-path: ./app/yarn.lock
     
       - name: restore cache
         id: restore-cache
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('app/yarn.lock') }}
 
       - name: install dependent modules
         if: steps.restore-cache.outputs.cache-hit != 'true'
@@ -36,30 +40,34 @@ jobs:
 
       - name: cache modules
         if: steps.restore-cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@v4
         with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          path: ./app/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('app/yarn.lock') }}
     
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
     needs: setup
     steps:
       - name: code checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
     
       - name: node setup
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: v16.15
+          node-version: v20
           cache: yarn
+          cache-dependency-path: ./app/yarn.lock
     
       - name: restore cache
         id: restore-cache
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          path: ./app/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('app/yarn.lock') }}
 
       - name: exit if cache does not hit
         if: steps.restore-cache.outputs.cache-hit != 'true'
