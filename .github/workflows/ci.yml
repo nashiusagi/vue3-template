@@ -4,7 +4,7 @@ name: ci
 on:
   push:
     branches-ignore:
-      - master
+      - main
 
 env:
   TZ: Asia/Tokyo
