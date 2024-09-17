@@ -1,4 +1,5 @@
 # Vue3 + TypeScript + Viteテンプレートプロジェクト
+[![coverage](https://nashiusagi.github.io/vue3-template/coverage.svg)](https://nashiusagi.github.io/vue3-template/)
 
 ## 環境
 * Vue3
