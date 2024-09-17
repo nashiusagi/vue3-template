@@ -1,4 +1,5 @@
-require("@rushstack/eslint-patch/modern-module-resolution");
+const { vitest } = require("@vitest/eslint-plugin");
+
 
 module.exports = {
   root: true,
@@ -12,7 +13,11 @@ module.exports = {
   extends: [
     "plugin:vue/vue3-essential",
     "@vue/eslint-config-airbnb-with-typescript",
-    "@vue/eslint-config-prettier",
+    "@vue/eslint-config-prettier"
+  ],
+
+  plugins: [
+    vitest
   ],
 
   parserOptions: {
