@@ -64,5 +64,6 @@ module.exports = {
   ignorePatterns: [
     "/lib/**/*", // Ignore built files.
     "**/*.js",
+    "vitest.config.ts"
   ],
 };

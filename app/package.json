@@ -9,7 +9,9 @@
     "build:dev": "vue-tsc --noEmit --skipLibCheck && VITE_SERVICE_ENV=dev vite build",
     "build:prod": "vue-tsc --noEmit --skipLibCheck && VITE_SERVICE_ENV=prod vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "test:unit": "vitest run",
+    "test:unit-with-coverage-report": "vitest run --coverage"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
