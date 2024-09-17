@@ -1,0 +1,40 @@
+---
+  name: Main workflows
+  
+  on:
+    push:
+      branches:
+        - feature/**
+  
+  jobs:
+    deploy-coverage:
+      runs-on: ubuntu-22.04
+      defaults:
+        run:
+          working-directory: ./app
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: node setup
+          uses: actions/setup-node@v4
+          with:
+            node-version: v20
+            cache: yarn
+            cache-dependency-path: ./app/yarn.lock
+      
+        - name: restore cache
+          id: restore-cache
+          uses: actions/cache/restore@v4
+          with:
+            path: ./app/node_modules
+            key: ${{ runner.os }}-yarn-${{ hashFiles('app/yarn.lock') }}
+  
+        - name: Measure Coverage
+          run: scripts/coverage.sh
+  
+        - name: Deploy Coverage Result 
+          uses: peaceiris/actions-gh-pages@v4
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./coverage

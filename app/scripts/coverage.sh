@@ -6,5 +6,5 @@ result=$(yarn test:coverage | grep All)
 IFS='|'
 read -ra arr <<< "$result"
 
-coverage=${arr[1]}
-curl -o coverage/coverage.svg https://img.shields.io/badge/coverage-${percent}%25-green
+coverage=$(echo ${arr[1]} | sed -e 's/ //g')
+curl -o coverage/coverage.svg https://img.shields.io/badge/coverage-${coverage}%25-green
