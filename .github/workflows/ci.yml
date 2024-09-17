@@ -3,8 +3,8 @@ name: ci
 
 on:
   push:
-    branches:
-      -  feature/**
+    branches-ignore:
+      - master
 
 env:
   TZ: Asia/Tokyo
