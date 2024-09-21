@@ -29,6 +29,10 @@
           with:
             path: ./app/node_modules
             key: ${{ runner.os }}-yarn-${{ hashFiles('app/yarn.lock') }}
+
+        - name: exit if cache does not hit
+          if: steps.restore-cache.outputs.cache-hit != 'true'
+          run: exit 1 
   
         - name: Measure Coverage
           run: scripts/coverage.sh
