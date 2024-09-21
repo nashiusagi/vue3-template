@@ -46,6 +46,7 @@
       defaults:
         run:
           working-directory: ./app
+      needs: setup
       steps:
         - name: Checkout
           uses: actions/checkout@v4
