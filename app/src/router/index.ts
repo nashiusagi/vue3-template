@@ -8,19 +8,19 @@ import {
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/index",
-    component: () => import("@/pages/index.vue"),
+    component: () => import("@/pages/IndexPage.vue"),
   },
   {
     path: "/sample",
-    component: () => import("@/pages/sample.vue"),
+    component: () => import("@/pages/SamplePage.vue"),
   },
   {
     path: "/post/:id",
-    component: () => import("@/pages/show.vue"),
+    component: () => import("@/pages/ShowPost.vue"),
   },
   {
     path: "/post/create",
-    component: () => import("@/pages/create.vue"),
+    component: () => import("@/pages/CreatePost.vue"),
   },
 ];
 

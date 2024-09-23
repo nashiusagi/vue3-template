@@ -9,7 +9,10 @@ import TheHeader from "@/components/organisms/TheHeader.vue";
       <TheHeader />
     </el-header>
     <el-container :class="$style.container">
-      <el-aside width="200px" :class="$style.wrap">
+      <el-aside
+        width="200px"
+        :class="$style.wrap"
+      >
         <side-bar />
       </el-aside>
       <el-main :class="$style.main">

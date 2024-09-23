@@ -1,11 +1,14 @@
 <script setup lang="ts">
 defineProps<{
-  error: string;
-}>();
+  error: string
+}>()
+
 </script>
 
 <template>
-  <p class="error_label">{{ error }}</p>
+  <p class="error_label">
+    {{ error }}
+  </p>
 </template>
 
 <style scoped>
