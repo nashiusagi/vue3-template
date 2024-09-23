@@ -2,7 +2,7 @@ import globals from 'globals';
 import js from '@eslint/js';
 import ts from 'typescript-eslint';
 import vue from 'eslint-plugin-vue';
-//import prettier from 'eslint-plugin-prettier/recommended';
+import prettier from 'eslint-config-prettier';
 
 export default [
   {
@@ -89,10 +89,5 @@ export default [
   },
 
   // prettier
-  //prettier,
-  //{
-  //  rules: {
-  //    'prettier/prettier': 'warn',
-  //  },
-  //},
+  prettier,
 ];
