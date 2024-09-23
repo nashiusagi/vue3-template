@@ -5,10 +5,22 @@ import HeaderItem from "@/components/atoms/HeaderItem.vue";
 <template>
   <div :class="$style.headerWrapper">
     <nav :class="$style.headerNav">
-      <HeaderItem :link="'/index'" :title="'index'" />
-      <HeaderItem :link="'/sample'" :title="'sample'" />
-      <HeaderItem :link="'/sample'" :title="'sample2'" />
-      <HeaderItem :link="'/sample'" :title="'sample3'" />
+      <HeaderItem
+        :link="'/index'"
+        :title="'index'"
+      />
+      <HeaderItem
+        :link="'/sample'"
+        :title="'sample'"
+      />
+      <HeaderItem
+        :link="'/sample'"
+        :title="'sample2'"
+      />
+      <HeaderItem
+        :link="'/sample'"
+        :title="'sample3'"
+      />
     </nav>
   </div>
 </template>

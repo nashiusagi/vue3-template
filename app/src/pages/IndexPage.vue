@@ -22,9 +22,15 @@ axios.get("/msw/index").then((res) => {
     <div>
       <h1>Hello, this is an index page!</h1>
       <div :class="$style.create_link_wrapper">
-        <a href="/post/create" :class="$style.create_link">create</a>
+        <a
+          href="/post/create"
+          :class="$style.create_link"
+        >create</a>
       </div>
-      <ul v-for="post in messageData.data" :key="post.id">
+      <ul
+        v-for="post in messageData.data"
+        :key="post.id"
+      >
         <PostCard :post="post" />
       </ul>
     </div>

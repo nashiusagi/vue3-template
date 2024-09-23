@@ -6,7 +6,9 @@ defineProps<{
 </script>
 
 <template>
-  <p class="error_label">{{ error }}</p>
+  <p class="error_label">
+    {{ error }}
+  </p>
 </template>
 
 <style scoped>
