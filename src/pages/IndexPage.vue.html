@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/pages/create.vue</title>
+    <title>Code coverage report for src/pages/IndexPage.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/pages</a> create.vue</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/pages</a> IndexPage.vue</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/64</span>
+                <span class='fraction'>0/61</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/64</span>
+                <span class='fraction'>0/61</span>
             </div>
         
             
@@ -124,13 +124,7 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -192,69 +186,66 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >&lt;script setup lang="ts"&gt;</span></span></span>
-<span class="cstat-no" title="statement not covered" >import axios from "axios";</span>
 <span class="cstat-no" title="statement not covered" >import { reactive } from "vue";</span>
+<span class="cstat-no" title="statement not covered" >import { PostsData } from "@/types/api";</span>
+<span class="cstat-no" title="statement not covered" >import axios from "axios";</span>
 <span class="cstat-no" title="statement not covered" >import MainLayout from "@/layouts/MainLayout.vue";</span>
-<span class="cstat-no" title="statement not covered" >import ErrorLabel from "@/components/atoms/ErrorLabel.vue";</span>
-<span class="cstat-no" title="statement not covered" >import { useRouter } from "vue-router";</span>
+<span class="cstat-no" title="statement not covered" >import PostCard from "@/components/organisms/PostCard.vue";</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const router = useRouter();</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const form = reactive({</span>
-<span class="cstat-no" title="statement not covered" >  title: "",</span>
-<span class="cstat-no" title="statement not covered" >  body: "",</span>
+<span class="cstat-no" title="statement not covered" >const messageData: PostsData = reactive({</span>
+<span class="cstat-no" title="statement not covered" >  data: [],</span>
+<span class="cstat-no" title="statement not covered" >  isLoaded: false,</span>
+<span class="cstat-no" title="statement not covered" >  error: {},</span>
 <span class="cstat-no" title="statement not covered" >});</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const formError = reactive({</span>
-<span class="cstat-no" title="statement not covered" >  titleError: "",</span>
-<span class="cstat-no" title="statement not covered" >  bodyError: "",</span>
+<span class="cstat-no" title="statement not covered" >axios.get("/msw/index").then((res) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  messageData.data = res.data;</span>
+<span class="cstat-no" title="statement not covered" >  messageData.isLoaded = true;</span>
 <span class="cstat-no" title="statement not covered" >});</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const submit = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  if (form.title === "") {</span>
-<span class="cstat-no" title="statement not covered" >    formError.titleError = "※ titleに1文字以上設定してください";</span>
-<span class="cstat-no" title="statement not covered" >  } else {</span>
-<span class="cstat-no" title="statement not covered" >    formError.titleError = "";</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (form.body === "") {</span>
-<span class="cstat-no" title="statement not covered" >    formError.bodyError = "※ 本文に1文字以上設定してください";</span>
-<span class="cstat-no" title="statement not covered" >  } else {</span>
-<span class="cstat-no" title="statement not covered" >    formError.bodyError = "";</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (form.title === "" || form.body === "") {</span>
-<span class="cstat-no" title="statement not covered" >    return;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  axios.post("/msw/post/store", { post: form }).then(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    router.push("/index");</span>
-<span class="cstat-no" title="statement not covered" >  });</span>
-<span class="cstat-no" title="statement not covered" >};</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const goIndex = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  router.push("/index");</span>
-<span class="cstat-no" title="statement not covered" >};</span>
 <span class="cstat-no" title="statement not covered" >&lt;/script&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >&lt;template&gt;</span>
 <span class="cstat-no" title="statement not covered" >  &lt;main-layout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;h1&gt;ブログを作成する&lt;/h1&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;el-form :model="form" label-width="120px"&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;el-form-item label="タイトル"&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;el-input v-model="form.title" /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;ErrorLabel :error="formError.titleError" /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/el-form-item&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;el-form-item label="本文"&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;el-input v-model="form.body" type="textarea" :rows="30" /&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;ErrorLabel :error="formError.bodyError" /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/el-form-item&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;el-form-item&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;el-button type="primary" @click="submit"&gt;Create&lt;/el-button&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;el-button @click="goIndex"&gt;Cancel&lt;/el-button&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/el-form-item&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/el-form&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;h1&gt;Hello, this is an index page!&lt;/h1&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;div :class="$style.create_link_wrapper"&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;a</span>
+<span class="cstat-no" title="statement not covered" >          href="/post/create"</span>
+<span class="cstat-no" title="statement not covered" >          :class="$style.create_link"</span>
+<span class="cstat-no" title="statement not covered" >        &gt;create&lt;/a&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;ul</span>
+<span class="cstat-no" title="statement not covered" >        v-for="post in messageData.data"</span>
+<span class="cstat-no" title="statement not covered" >        :key="post.id"</span>
+<span class="cstat-no" title="statement not covered" >      &gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;PostCard :post="post" /&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/ul&gt;</span>
 <span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >  &lt;/main-layout&gt;</span>
 <span class="cstat-no" title="statement not covered" >&lt;/template&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >&lt;style module&gt;</span>
+<span class="cstat-no" title="statement not covered" >.create_link_wrapper {</span>
+<span class="cstat-no" title="statement not covered" >  height: 32px;</span>
+<span class="cstat-no" title="statement not covered" >  width: 78px;</span>
+<span class="cstat-no" title="statement not covered" >  border: 1px solid #409eff;</span>
+<span class="cstat-no" title="statement not covered" >  border-radius: 3px;</span>
+<span class="cstat-no" title="statement not covered" >  background-color: #409eff;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >.create_link_wrapper:hover {</span>
+<span class="cstat-no" title="statement not covered" >  background-color: #1389ff;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >.create_link {</span>
+<span class="cstat-no" title="statement not covered" >  color: #ffffff;</span>
+<span class="cstat-no" title="statement not covered" >  display: block;</span>
+<span class="cstat-no" title="statement not covered" >  width: 100%;</span>
+<span class="cstat-no" title="statement not covered" >  height: 100%;</span>
+<span class="cstat-no" title="statement not covered" >  line-height: 100%;</span>
+<span class="cstat-no" title="statement not covered" >  text-align: center;</span>
+<span class="cstat-no" title="statement not covered" >  padding: 6px 0 6px 0;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >&lt;/style&gt;</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -262,7 +253,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-09-21T11:00:11.670Z
+                at 2024-09-23T04:49:49.529Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
