@@ -1,40 +1,98 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import eslintConfig from '@eslint/js'
-import tsEslintPlugin from '@typescript-eslint/eslint-plugin'
-import tsEslintParser from '@typescript-eslint/parser'
-import eslintConfigPrettier from 'eslint-config-prettier'
-import { fileURLToPath } from 'node:url';
-import { dirname } from 'pathe';
-
-const eslintrc = new FlatCompat({
-  baseDirectory: dirname(fileURLToPath(import.meta.url))
-});
-
-const tsEsLintConfig = {
-  plugins: {
-    '@typescript-eslint': tsEslintPlugin,
-  },
-  files: ['**/*.ts', '**/*.tsx', '**/*.vue'],
-  languageOptions: {
-    parser: tsEslintParser,
-    parserOptions: {
-      project: true,
-      extraFileExtensions: ['.vue'],
-    },
-  },
-  rules: {
-    ...tsEslintPlugin.configs['eslint-recommended'].overrides[0].rules,
-    // '@typescript-eslint/consistent-type-imports': 'error',
-    '@typescript-eslint/no-import-type-side-effects': 'error',
-  }
-}
+import globals from 'globals';
+import js from '@eslint/js';
+import ts from 'typescript-eslint';
+import vue from 'eslint-plugin-vue';
+//import prettier from 'eslint-plugin-prettier/recommended';
 
 export default [
   {
     ignores: ['**/dist/**/*', '**/node_modules/*'],
   },
-  eslintConfig.configs.recommended,
-  tsEsLintConfig,
-  ...eslintrc.extends('plugin:vue/vue3-recommended'),
-  eslintConfigPrettier,
-]
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
+
+  // js
+  js.configs.recommended,
+  {
+    rules: {
+      'no-unused-vars': 'off',
+      'no-undef': 'off',
+    },
+  },
+
+  // ts
+  ...ts.configs.recommended,
+  {
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/no-explicit-any': 'warn',
+    },
+  },
+
+  // vue
+  ...vue.configs['flat/recommended'],
+  {
+    files: ['*.vue', '**/*.vue'],
+    languageOptions: {
+      parserOptions: {
+        parser: ts.parser,
+      },
+    },
+  },
+  {
+    rules: {
+      //'vue/multi-word-component-names': 'off',
+      //'vue/attribute-hyphenation': ['error', 'never'],
+      //'vue/v-on-event-hyphenation': ['error', 'never'],
+      //'vue/no-v-html': 'off',
+
+      //'vue/block-lang': ['error', { script: { lang: 'ts' } }],
+      //'vue/block-order': ['error', { order: ['script[setup]', 'template', 'style[scoped]'] }],
+      //'vue/component-api-style': ['error', ['script-setup']],
+      //'vue/component-name-in-template-casing': 'error',
+      //'vue/custom-event-name-casing': 'error',
+      //'vue/define-emits-declaration': 'error',
+      //'vue/define-macros-order': [
+      //  'error',
+      //  {
+      //    order: ['defineOptions', 'defineModel', 'defineProps', 'defineEmits', 'defineSlots'],
+      //    defineExposeLast: true,
+      //  },
+      //],
+      //'vue/define-props-declaration': 'error',
+      //'vue/html-button-has-type': 'error',
+      //'vue/no-multiple-objects-in-class': 'warn',
+      //'vue/no-root-v-if': 'error',
+      //'vue/no-template-target-blank': 'error',
+      //'vue/no-undef-components': 'warn',
+      //'vue/no-undef-properties': 'warn',
+      //'vue/no-unused-refs': 'warn',
+      //'vue/no-use-v-else-with-v-for': 'error',
+      //'vue/no-useless-mustaches': 'warn',
+      //'vue/no-useless-v-bind': 'warn',
+      //'vue/no-v-text': 'error',
+      //'vue/padding-line-between-blocks': 'warn',
+      //'vue/prefer-define-options': 'error',
+      //'vue/prefer-separate-static-class': 'warn',
+      //'vue/prefer-true-attribute-shorthand': 'warn',
+      //'vue/require-macro-variable-name': 'error',
+      //'vue/require-typed-ref': 'warn',
+      //'vue/v-for-delimiter-style': 'error',
+      //'vue/valid-define-options': 'error',
+    },
+  },
+
+  // prettier
+  //prettier,
+  //{
+  //  rules: {
+  //    'prettier/prettier': 'warn',
+  //  },
+  //},
+];
