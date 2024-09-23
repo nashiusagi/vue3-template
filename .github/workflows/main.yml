@@ -7,11 +7,46 @@
         - main
   
   jobs:
+    setup:
+      runs-on: ubuntu-22.04
+      defaults:
+        run:
+          working-directory: ./app
+      steps:
+        - name: code checkout
+          uses: actions/checkout@v4
+    
+        - name: node setup
+          uses: actions/setup-node@v4
+          with:
+            node-version: v20
+            cache: yarn
+            cache-dependency-path: ./app/yarn.lock
+    
+        - name: restore cache
+          id: restore-cache
+          uses: actions/cache/restore@v4
+          with:
+            path: node_modules
+            key: ${{ runner.os }}-yarn-${{ hashFiles('app/yarn.lock') }}
+
+        - name: install dependent modules
+          if: steps.restore-cache.outputs.cache-hit != 'true'
+          run: yarn install --frozen-lockfile
+
+        - name: cache modules
+          if: steps.restore-cache.outputs.cache-hit != 'true'
+          uses: actions/cache/save@v4
+          with:
+            path: ./app/node_modules
+            key: ${{ runner.os }}-yarn-${{ hashFiles('app/yarn.lock') }}
+
     deploy-coverage:
       runs-on: ubuntu-22.04
       defaults:
         run:
           working-directory: ./app
+      needs: setup
       steps:
         - name: Checkout
           uses: actions/checkout@v4
@@ -29,6 +64,10 @@
           with:
             path: ./app/node_modules
             key: ${{ runner.os }}-yarn-${{ hashFiles('app/yarn.lock') }}
+
+        - name: exit if cache does not hit
+          if: steps.restore-cache.outputs.cache-hit != 'true'
+          run: exit 1 
   
         - name: Measure Coverage
           run: scripts/coverage.sh
