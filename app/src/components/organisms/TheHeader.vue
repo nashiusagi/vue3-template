@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HeaderItem from "@/components/atoms/HeaderItem.vue";
+import HeaderItem from "@/components/atoms/HeaderItem/HeaderItem.vue";
 </script>
 
 <template>
