@@ -4,7 +4,7 @@ import ErrorLabel from "./ErrorLabel.vue";
 type Story = StoryObj<typeof ErrorLabel>;
 
 const meta: Meta<typeof ErrorLabel> = {
-  title: "ErrorLabel",
+  title: "atoms/ErrorLabel",
   component: ErrorLabel,
 };
 
