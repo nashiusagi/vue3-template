@@ -11,7 +11,7 @@ const meta: Meta<typeof SideBar> = {
 export const Default: Story = {
   render: () => ({
     components: { SideBar },
-    template: '<SideBar />',
+    template: "<SideBar />",
   }),
 };
 
