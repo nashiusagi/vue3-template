@@ -5,33 +5,35 @@ import TheHeader from "@/components/organisms/TheHeader/TheHeader.vue";
 
 <template>
   <el-container>
-    <el-header :class="$style.header">
+    <header :class="$style.header">
       <TheHeader />
-    </el-header>
-    <el-container :class="$style.container">
+    </header>
+    <section :class="$style.container">
       <el-aside width="200px" :class="$style.wrap">
         <side-bar />
       </el-aside>
       <el-main :class="$style.main">
         <slot />
       </el-main>
-    </el-container>
+    </section>
   </el-container>
 </template>
 
 <style module>
 .header {
   width: 100%;
-  background-color: #519503;
   position: fixed;
   overflow: hidden;
   z-index: 100;
 }
 
 .container {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  padding: 100px 0 0 0;
 }
 
 .wrap {

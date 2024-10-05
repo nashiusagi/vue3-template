@@ -13,13 +13,16 @@ defineProps<{
 
 <style scoped>
 .header_container {
-  width: 25%;
+  width: 160px;
   cursor: pointer;
   height: 100%;
 }
 
 .header_container:hover {
-  background-color: #007700;
+  background-color: #eee;
+  a {
+    color: #1c64f2;
+  }
 }
 
 .header_title {
@@ -29,5 +32,6 @@ defineProps<{
   line-height: 100%;
   padding: 18px 0 18px 0;
   text-align: center;
+  font-size: 24px;
 }
 </style>
