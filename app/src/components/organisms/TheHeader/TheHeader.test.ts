@@ -4,8 +4,8 @@ import TheHeader from "./TheHeader.vue";
 
 describe("TheHeaderのテスト", () => {
   test("レンダリングされる", () => {
-    const wrapper = mount(TheHeader, {})
+    const wrapper = mount(TheHeader, {});
 
-    expect(wrapper.findAll(".header_title").length).toBe(4)
-  })
-})
+    expect(wrapper.findAll(".header_title").length).toBe(4);
+  });
+});

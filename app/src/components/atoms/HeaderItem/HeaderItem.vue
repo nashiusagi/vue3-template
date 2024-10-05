@@ -7,10 +7,7 @@ defineProps<{
 
 <template>
   <div class="header_container">
-    <a
-      class="header_title"
-      :href="link"
-    >{{ title }}</a>
+    <a class="header_title" :href="link">{{ title }}</a>
   </div>
 </template>
 
