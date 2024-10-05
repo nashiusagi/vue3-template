@@ -3,7 +3,7 @@ import { reactive } from "vue";
 import { PostsData } from "@/types/api";
 import axios from "axios";
 import MainLayout from "@/layouts/MainLayout.vue";
-import PostCard from "@/components/organisms/PostCard.vue";
+import PostCard from "@/components/organisms/PostCard/PostCard.vue";
 
 const messageData: PostsData = reactive({
   data: [],
