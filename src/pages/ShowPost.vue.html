@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>0/25</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>0/25</span>
             </div>
         
             
@@ -99,6 +99,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -109,36 +117,28 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >&lt;script setup lang="ts"&gt;</span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >&lt;script setup lang="ts"&gt;<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
 <span class="cstat-no" title="statement not covered" >import MainLayout from "@/layouts/MainLayout.vue";</span>
 <span class="cstat-no" title="statement not covered" >import axios from "axios";</span>
 <span class="cstat-no" title="statement not covered" >import { reactive } from "vue";</span>
-<span class="cstat-no" title="statement not covered" >import { Post, PostData } from "@/types/api";</span>
-<span class="cstat-no" title="statement not covered" ></span>
+import { Post, PostData } from "@/types/api";
+&nbsp;
 <span class="cstat-no" title="statement not covered" >const post: PostData = reactive({</span>
 <span class="cstat-no" title="statement not covered" >  data: {} as Post,</span>
 <span class="cstat-no" title="statement not covered" >  isLoaded: false,</span>
 <span class="cstat-no" title="statement not covered" >  error: {},</span>
 <span class="cstat-no" title="statement not covered" >});</span>
-<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >axios</span>
 <span class="cstat-no" title="statement not covered" >  .get("/msw/post")</span>
 <span class="cstat-no" title="statement not covered" >  .then((res) =&gt; {</span>
@@ -149,16 +149,16 @@
 <span class="cstat-no" title="statement not covered" >    post.isLoaded = true;</span>
 <span class="cstat-no" title="statement not covered" >    post.error = e;</span>
 <span class="cstat-no" title="statement not covered" >  });</span>
-<span class="cstat-no" title="statement not covered" >&lt;/script&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >&lt;template&gt;</span>
+&lt;/script&gt;
+&nbsp;
+&lt;template&gt;
 <span class="cstat-no" title="statement not covered" >  &lt;main-layout&gt;</span>
 <span class="cstat-no" title="statement not covered" >    &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >      &lt;h1&gt;{{ post.data.title }}&lt;/h1&gt;</span>
 <span class="cstat-no" title="statement not covered" >      &lt;p&gt;{{ post.data.body }}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >  &lt;/main-layout&gt;</span>
-<span class="cstat-no" title="statement not covered" >&lt;/template&gt;</span>
+&lt;/template&gt;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -166,7 +166,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-05T02:36:33.988Z
+                at 2024-10-05T06:59:22.313Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
