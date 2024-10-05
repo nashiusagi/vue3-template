@@ -13,7 +13,8 @@ export default mergeConfig(
       },
       exclude: [
         './playwright/*',
-        './node_modules/*'
+        './node_modules/*',
+        '.cache/*' // for CI
       ]
     },
   })
