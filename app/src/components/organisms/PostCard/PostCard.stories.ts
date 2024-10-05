@@ -11,6 +11,7 @@ const meta: Meta<typeof PostCard> = {
 export const Default: Story = {
   args: {
     post: {
+      id: 1,
       title: "title",
       body: "body",
     },
