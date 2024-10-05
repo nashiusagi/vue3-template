@@ -12,10 +12,7 @@ const link: string = `/post/${props.post.id}`;
   <li class="card">
     <div>
       <h2>
-        <a
-          class="post_link"
-          :href="link"
-        >{{ post.title }}</a>
+        <a class="post_link" :href="link">{{ post.title }}</a>
       </h2>
       <p>{{ post.body }}</p>
     </div>
