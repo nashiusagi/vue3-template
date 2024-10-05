@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import SideBar from "@/components/organisms/SideBar.vue";
-import TheHeader from "@/components/organisms/TheHeader.vue";
+import SideBar from "@/components/organisms/SideBar/SideBar.vue";
+import TheHeader from "@/components/organisms/TheHeader/TheHeader.vue";
 </script>
 
 <template>
@@ -9,10 +9,7 @@ import TheHeader from "@/components/organisms/TheHeader.vue";
       <TheHeader />
     </el-header>
     <el-container :class="$style.container">
-      <el-aside
-        width="200px"
-        :class="$style.wrap"
-      >
+      <el-aside width="200px" :class="$style.wrap">
         <side-bar />
       </el-aside>
       <el-main :class="$style.main">

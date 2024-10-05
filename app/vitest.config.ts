@@ -1,11 +1,16 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vitest/config'
+import { mergeConfig, defineConfig } from 'vitest/config'
+import viteConfig from './vite.config'
 
-export default defineConfig({
-  test: {
-    coverage: {
-      reporter: ['text', 'json', 'html'],
-      all: true,
-    }
-  },
-})
+export default mergeConfig(
+  viteConfig, 
+  defineConfig({
+    test: {
+      environment: 'happy-dom',
+      coverage: {
+        reporter: ['text', 'json', 'html'],
+        all: true,
+      }
+    },
+  })
+)
