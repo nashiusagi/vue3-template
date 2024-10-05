@@ -10,7 +10,12 @@ export default mergeConfig(
       coverage: {
         reporter: ['text', 'json', 'html'],
         all: true,
-      }
+      },
+      exclude: [
+        './playwright/*',
+        './node_modules/*',
+        '.cache/*' // for CI
+      ]
     },
   })
 )
