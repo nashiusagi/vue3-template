@@ -2,7 +2,7 @@
 import axios from "axios";
 import { reactive } from "vue";
 import MainLayout from "@/layouts/MainLayout.vue";
-import ErrorLabel from "@/components/atoms/ErrorLavel/ErrorLabel.vue";
+import ErrorLabel from "@/components/atoms/ErrorLabel/ErrorLabel.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
