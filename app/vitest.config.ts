@@ -10,6 +10,11 @@ export default mergeConfig(
       coverage: {
         reporter: ['text', 'json', 'html'],
         all: true,
+        include: [
+          'src/components/**',
+          'src/composable/**',
+          'src/layouts/**',
+        ]
       },
       exclude: [
         './playwright/*',
