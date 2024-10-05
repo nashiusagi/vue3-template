@@ -41,9 +41,6 @@ import TheHeader from "@/components/organisms/TheHeader/TheHeader.vue";
   background-color: #545c64;
   position: fixed;
   height: calc(100vh - 80px);
-  border-top: 70px solid #fff;
-  border-bottom: 10px solid #fff;
-  border-left: 10px solid #fff;
   overflow: hidden;
 }
 
