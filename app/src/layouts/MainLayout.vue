@@ -4,48 +4,65 @@ import TheHeader from "@/components/organisms/TheHeader/TheHeader.vue";
 </script>
 
 <template>
-  <el-container>
-    <el-header :class="$style.header">
+  <section :class="$style.whole_container">
+    <header :class="$style.header">
       <TheHeader />
-    </el-header>
-    <el-container :class="$style.container">
-      <el-aside width="200px" :class="$style.wrap">
+    </header>
+    <div :class="$style.container">
+      <aside width="200px" :class="$style.side_menu">
         <side-bar />
-      </el-aside>
-      <el-main :class="$style.main">
-        <slot />
-      </el-main>
-    </el-container>
-  </el-container>
+      </aside>
+      <section :class="$style.main">
+        <div :class="$style.main_content">
+          <slot />
+        </div>
+      </section>
+    </div>
+  </section>
 </template>
 
 <style module>
+.whole_container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+}
+
 .header {
   width: 100%;
-  background-color: #519503;
   position: fixed;
   overflow: hidden;
   z-index: 100;
 }
 
 .container {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   box-sizing: border-box;
+  padding: 100px 0 0 0;
 }
 
-.wrap {
+.side_menu {
   padding: 0;
   background-color: #545c64;
   position: fixed;
-  height: calc(100vh - 80px);
-  border-top: 70px solid #fff;
-  border-bottom: 10px solid #fff;
-  border-left: 10px solid #fff;
+  height: calc(100vh - 100px);
   overflow: hidden;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 20%;
 }
 
 .main {
-  padding-left: 240px;
+  margin-left: auto;
+  width: 80%;
+}
+
+.main_content {
+  padding: 2em;
 }
 </style>

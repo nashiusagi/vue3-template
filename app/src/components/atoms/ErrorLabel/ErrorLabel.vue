@@ -5,12 +5,12 @@ defineProps<{
 </script>
 
 <template>
-  <p class="error_label">
+  <p :class="$style.error_label" class="error_label">
     {{ error }}
   </p>
 </template>
 
-<style scoped>
+<style module>
 .error_label {
   color: #ff0000;
 }
