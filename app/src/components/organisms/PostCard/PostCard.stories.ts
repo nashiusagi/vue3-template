@@ -21,7 +21,7 @@ export const Default: Story = {
     setup() {
       return { ...args };
     },
-    template: '<PostCard :post="post" />',
+    template: '<ul><PostCard :post="post" /></ul>',
   }),
 };
 
