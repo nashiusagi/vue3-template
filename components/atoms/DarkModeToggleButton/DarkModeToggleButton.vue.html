@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/organisms/SideBar/SideBar.stories.ts</title>
+    <title>Code coverage report for components/atoms/DarkModeToggleButton/DarkModeToggleButton.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">components/organisms/SideBar</a> SideBar.stories.ts</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">components/atoms/DarkModeToggleButton</a> DarkModeToggleButton.vue</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
@@ -81,7 +81,22 @@
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -91,32 +106,50 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import type { Meta, StoryObj } from "@storybook/vue3";<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
-<span class="cstat-no" title="statement not covered" >import SideBar from "./SideBar.vue";</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >&lt;script setup lang="ts"&gt;<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
+<span class="cstat-no" title="statement not covered" >import { useDark, useToggle } from '@vueuse/core';</span>
+<span class="cstat-no" title="statement not covered" >import { Moon } from "@element-plus/icons-vue";</span>
 &nbsp;
-type Story = StoryObj&lt;typeof SideBar&gt;;
+<span class="cstat-no" title="statement not covered" >const isDark = useDark()</span>
+<span class="cstat-no" title="statement not covered" >const toggleDark = useToggle(isDark)</span>
+&lt;/script&gt;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >const meta: Meta&lt;typeof SideBar&gt; = {</span>
-<span class="cstat-no" title="statement not covered" >  title: "organisms/SideBar",</span>
-<span class="cstat-no" title="statement not covered" >  component: SideBar,</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+&lt;template&gt;
+<span class="cstat-no" title="statement not covered" >  &lt;div :class="$style.dark_mode_button"&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;span @click.stop="toggleDark()"&gt;&lt;el-icon :size="24"&gt;&lt;Moon /&gt;&lt;/el-icon&gt; &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;el-switch v-model="isDark" size="large" &gt;&lt;/el-switch&gt;</span>
+<span class="cstat-no" title="statement not covered" >  &lt;/div&gt;</span>
+&lt;/template&gt;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export const Default: Story = {</span>
-<span class="cstat-no" title="statement not covered" >  render: () =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >    components: { SideBar },</span>
-<span class="cstat-no" title="statement not covered" >    template: "&lt;SideBar /&gt;",</span>
-<span class="cstat-no" title="statement not covered" >  }),</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+&lt;style module&gt;
+.dark_mode_button {
+  line-height: 40px;
+  display: flex;
+  gap: 4px;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default meta;</span>
+  span {
+    line-height: 40px;
+    svg {
+      margin-top: 14px;
+    }
+  }
+}
+&lt;/style&gt;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -124,7 +157,7 @@ type Story = StoryObj&lt;typeof SideBar&gt;;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-05T11:56:06.558Z
+                at 2024-10-06T05:25:34.616Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
