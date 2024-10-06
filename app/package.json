@@ -50,7 +50,9 @@
     "vue-tsc": "^2.1.6"
   },
   "msw": {
-    "workerDirectory": "public"
+    "workerDirectory": [
+      "public"
+    ]
   },
   "resolutions": {
     "strip-ansi": "6.0.0"

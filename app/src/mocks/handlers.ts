@@ -1,4 +1,4 @@
-import { setupWorker } from "msw";
+import { setupWorker } from "msw/browser";
 import { sampleRequest } from "./sampleRequest";
 import { postRequest } from "./postRequest";
 import { postStoreRequest } from "./postStoreRequest";
