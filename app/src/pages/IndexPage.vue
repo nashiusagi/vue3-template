@@ -24,9 +24,11 @@ axios.get("/msw/index").then((res) => {
       <div :class="$style.create_link_wrapper">
         <a href="/post/create" :class="$style.create_link">create</a>
       </div>
-      <ul v-for="post in messageData.data" :key="post.id">
-        <PostCard :post="post" />
-      </ul>
+      <div :class="$style.cards">
+        <div v-for="post in messageData.data" :key="post.id">
+          <PostCard :post="post" />
+        </div>
+      </div>
     </div>
   </main-layout>
 </template>
@@ -43,6 +45,7 @@ axios.get("/msw/index").then((res) => {
 .create_link_wrapper:hover {
   background-color: #1389ff;
 }
+
 .create_link {
   color: #ffffff;
   display: block;
@@ -51,5 +54,12 @@ axios.get("/msw/index").then((res) => {
   line-height: 100%;
   text-align: center;
   padding: 6px 0 6px 0;
+}
+
+.cards {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 </style>
