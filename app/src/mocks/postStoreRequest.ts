@@ -1,11 +1,16 @@
 import { getUrl } from "@/composable/common/getUrl";
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 
 export const postStoreRequest = () => {
   const url = getUrl("/msw/", "post/store");
   return [
-    rest.post(url, (_, res, ctx) => {
-      return res(ctx.status(200));
+    http.post(url, () => {
+      return new HttpResponse("Created Post Successfully", {
+        status: 200,
+        headers: {
+          "Content-Type": "text/plain",
+        },
+      });
     }),
   ];
 };
