@@ -1,17 +1,23 @@
 <script setup lang="ts">
 import { Post } from "@/types/api";
+import { useDark } from "@vueuse/core";
+import { ref, watch } from "vue";
 
 const props = defineProps<{
   post: Post;
 }>();
-
 const link: string = `/post/${props.post.id}`;
+
+const isDark = ref(useDark().value)
+watch(useDark(), ()=>{
+  isDark.value = useDark().value
+})
 </script>
 
 <template>
   <div :class="$style.card">
-      <a :class="$style.post_link" class="post_link" :href="link">{{ post.title }}</a>
-      <p :class="$style.post_body">{{ post.body }}</p>
+      <a :class="[$style.post_link, {[$style.dark]: isDark}]" class="post_link" :href="link">{{ post.title }}</a>
+      <p :class="[$style.post_body, {[$style.dark]: isDark}]">{{ post.body }}</p>
   </div>
 </template>
 
@@ -23,6 +29,10 @@ const link: string = `/post/${props.post.id}`;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
   overflow: hidden;
   height: 160px;
+  
+  .dark {
+    color: #bfcbd9;
+  }
 }
 
 .post_link {
