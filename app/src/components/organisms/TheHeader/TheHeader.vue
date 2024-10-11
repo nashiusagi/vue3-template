@@ -1,13 +1,20 @@
 <script setup lang="ts">
 import DarkModeToggleButton from "@/components/atoms/DarkModeToggleButton/DarkModeToggleButton.vue";
 import HeaderItem from "@/components/atoms/HeaderItem/HeaderItem.vue";
+import { useDark } from "@vueuse/core";
+import { ref, watch } from "vue";
+
+const isDark = ref(useDark().value)
+watch(useDark(), ()=>{
+  isDark.value = useDark().value
+})
 </script>
 
 <template>
-  <div :class="$style.headerWrapper">
+  <div :class="[$style.headerWrapper, {[$style.dark]: isDark}]">
     <div :class="$style.headerContainer">
       <div>
-        <span :class="$style.headerTitle">Vue3 Template</span>
+        <span :class="[$style.headerTitle, {[$style.dark]: isDark}]">Vue3 Template</span>
       </div>
       <div :class="$style.header_right">
         <nav :class="$style.headerNav">
@@ -30,6 +37,11 @@ import HeaderItem from "@/components/atoms/HeaderItem/HeaderItem.vue";
   height: 100px;
   background-color: #fff;
 }
+.headerWrapper.dark {
+  width: 100%;
+  height: 100px;
+  background-color: #555;
+}
 
 .headerContainer {
   display: flex;
@@ -41,6 +53,10 @@ import HeaderItem from "@/components/atoms/HeaderItem/HeaderItem.vue";
 
 .headerTitle {
   color: #000;
+  font-size: 32px;
+}
+.headerTitle.dark {
+  color: #eee;
   font-size: 32px;
 }
 
