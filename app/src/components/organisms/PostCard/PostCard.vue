@@ -8,16 +8,23 @@ const props = defineProps<{
 }>();
 const link: string = `/post/${props.post.id}`;
 
-const isDark = ref(useDark().value)
-watch(useDark(), ()=>{
-  isDark.value = useDark().value
-})
+const isDark = ref(useDark().value);
+watch(useDark(), () => {
+  isDark.value = useDark().value;
+});
 </script>
 
 <template>
   <div :class="$style.card">
-      <a :class="[$style.post_link, {[$style.dark]: isDark}]" class="post_link" :href="link">{{ post.title }}</a>
-      <p :class="[$style.post_body, {[$style.dark]: isDark}]">{{ post.body }}</p>
+    <a
+      :class="[$style.post_link, { [$style.dark]: isDark }]"
+      class="post_link"
+      :href="link"
+      >{{ post.title }}</a
+    >
+    <p :class="[$style.post_body, { [$style.dark]: isDark }]">
+      {{ post.body }}
+    </p>
   </div>
 </template>
 
@@ -29,7 +36,7 @@ watch(useDark(), ()=>{
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
   overflow: hidden;
   height: 160px;
-  
+
   .dark {
     color: #bfcbd9;
   }
