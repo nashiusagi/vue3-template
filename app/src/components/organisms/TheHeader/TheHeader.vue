@@ -4,17 +4,19 @@ import HeaderItem from "@/components/atoms/HeaderItem/HeaderItem.vue";
 import { useDark } from "@vueuse/core";
 import { ref, watch } from "vue";
 
-const isDark = ref(useDark().value)
-watch(useDark(), ()=>{
-  isDark.value = useDark().value
-})
+const isDark = ref(useDark().value);
+watch(useDark(), () => {
+  isDark.value = useDark().value;
+});
 </script>
 
 <template>
-  <div :class="[$style.headerWrapper, {[$style.dark]: isDark}]">
+  <div :class="[$style.headerWrapper, { [$style.dark]: isDark }]">
     <div :class="$style.headerContainer">
       <div>
-        <span :class="[$style.headerTitle, {[$style.dark]: isDark}]">Vue3 Template</span>
+        <span :class="[$style.headerTitle, { [$style.dark]: isDark }]"
+          >Vue3 Template</span
+        >
       </div>
       <div :class="$style.header_right">
         <nav :class="$style.headerNav">

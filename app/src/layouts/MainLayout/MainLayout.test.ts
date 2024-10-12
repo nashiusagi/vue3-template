@@ -4,8 +4,7 @@ import { describe, expect, test } from "vitest";
 
 describe("MainLayoutのテスト", () => {
   test("レンダリングのテスト", () => {
-    const wrapper = mount(MainLayout, {
-    });
+    const wrapper = mount(MainLayout, {});
 
     expect(wrapper.find("header").exists()).toBe(true);
     expect(wrapper.find("aside").exists()).toBe(true);

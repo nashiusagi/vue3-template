@@ -7,15 +7,23 @@ defineProps<{
   title: string;
 }>();
 
-const isDark = ref(useDark().value)
-watch(useDark(), ()=>{
-  isDark.value = useDark().value
-})
+const isDark = ref(useDark().value);
+watch(useDark(), () => {
+  isDark.value = useDark().value;
+});
 </script>
 
 <template>
-  <div :class="[$style.header_container, {[$style.dark]: isDark}]" class="header_container">
-    <a :class="[$style.header_title, {[$style.dark]: isDark}]" class="header_title" :href="link">{{ title }}</a>
+  <div
+    :class="[$style.header_container, { [$style.dark]: isDark }]"
+    class="header_container"
+  >
+    <a
+      :class="[$style.header_title, { [$style.dark]: isDark }]"
+      class="header_title"
+      :href="link"
+      >{{ title }}</a
+    >
   </div>
 </template>
 
