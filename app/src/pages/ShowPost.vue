@@ -2,7 +2,7 @@
 import MainLayout from "@/layouts/MainLayout/MainLayout.vue";
 import axios from "axios";
 import { reactive } from "vue";
-import { Post, PostData } from "@/types/api";
+import type { Post, PostData } from "@/types/api";
 
 const post: PostData = reactive({
   data: {} as Post,
