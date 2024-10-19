@@ -9,7 +9,10 @@
     "build:dev": "vue-tsc --noEmit --skipLibCheck && VITE_SERVICE_ENV=dev vite build",
     "build:prod": "vue-tsc --noEmit --skipLibCheck && VITE_SERVICE_ENV=prod vite build",
     "preview": "vite preview",
-    "lint": "eslint .",
+    "format": "biome format ./src",
+    "format:write": "biome format --write ./src",
+    "lint": "biome lint ./src",
+    "lint:write": "biome lint --write ./src",
     "storybook": "storybook dev --port 6006",
     "test:unit": "vitest run",
     "test:coverage": "vitest run --coverage"
