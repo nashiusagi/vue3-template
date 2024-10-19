@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Post } from "@/types/api";
+import type { Post } from "@/types/api";
 import { useDark } from "@vueuse/core";
 import { ref, watch } from "vue";
 

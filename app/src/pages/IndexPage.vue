@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from "vue";
-import { PostsData } from "@/types/api";
+import type { PostsData } from "@/types/api";
 import axios from "axios";
 import MainLayout from "@/layouts/MainLayout/MainLayout.vue";
 import PostCard from "@/components/organisms/PostCard/PostCard.vue";
