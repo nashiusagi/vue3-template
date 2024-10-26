@@ -5,7 +5,10 @@ export interface Post {
 }
 
 export interface PostsData {
-  data: Post[];
+  data: {
+    posts: Post[];
+    maxPage: number;
+  };
   isLoaded: boolean;
   error: object;
 }
