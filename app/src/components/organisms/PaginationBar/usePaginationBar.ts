@@ -25,14 +25,17 @@ export function usePaginationBar() {
         String(maxPageNum),
       );
     } else {
-      if (currentPageNum - 2 * padding > 1) {
+      if (currentPageNum - padding > 2) {
         paginationItems.push("...");
       }
-      pushNumberItem(paginationItems, String(currentPageNum - 1));
-      pushNumberItem(paginationItems, String(currentPageNum));
-      pushNumberItem(paginationItems, String(currentPageNum + 1));
 
-      if (currentPageNum + 2 * padding < maxPageNum) {
+      for (let idx = -1 * padding; idx <= padding; idx++) {
+        if (currentPageNum + idx > 1 && currentPageNum + idx < maxPageNum) {
+          pushNumberItem(paginationItems, String(currentPageNum + idx));
+        }
+      }
+
+      if (currentPageNum + padding < maxPageNum - 1) {
         paginationItems.push("...");
       }
     }
