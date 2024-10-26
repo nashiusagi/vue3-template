@@ -36,9 +36,9 @@ export default mergeConfig(
         ]
       },
       exclude: [
-        './playwright/*',
-        './node_modules/*',
-        '.cache/*' // for CI
+        './playwright/**',
+        '**/node_modules/**',
+        '.cache/**' // for CI
       ]
     },
   })

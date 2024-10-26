@@ -39,5 +39,5 @@ export function usePaginationBar() {
     pushNumberItem(paginationItems, String(maxPageNum));
   };
 
-  return { pushNumberItem, setPaginationItems };
+  return { setPaginationItems };
 }

@@ -10,7 +10,7 @@ const padding = 1;
 const pageNum: Ref<number> = ref(1);
 const pageItem: Ref<string[]> = ref([]);
 const emits = defineEmits(["change"]);
-const { pushNumberItem, setPaginationItems } = usePaginationBar();
+const { setPaginationItems } = usePaginationBar();
 
 const showByPageNum = (index: number) => {
   pageNum.value = index;
