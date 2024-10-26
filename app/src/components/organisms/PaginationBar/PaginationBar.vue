@@ -7,6 +7,7 @@ const props = defineProps<{
   paddingSize?: number;
 }>();
 
+const paddingSize = props.paddingSize ?? 1;
 const pageNum: Ref<number> = ref(1);
 const pageItem: Ref<string[]> = ref([]);
 const emits = defineEmits(["change"]);
@@ -29,20 +30,10 @@ const showNextPage = () => {
 };
 
 watch(pageNum, () =>
-  setPaginationItems(
-    pageItem.value,
-    pageNum.value,
-    props.maxPage,
-    props.paddingSize,
-  ),
+  setPaginationItems(pageItem.value, pageNum.value, props.maxPage, paddingSize),
 );
 onMounted(() =>
-  setPaginationItems(
-    pageItem.value,
-    pageNum.value,
-    props.maxPage,
-    props.paddingSize,
-  ),
+  setPaginationItems(pageItem.value, pageNum.value, props.maxPage, paddingSize),
 );
 </script>
 
