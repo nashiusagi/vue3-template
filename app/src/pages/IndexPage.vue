@@ -1,20 +1,41 @@
 <script setup lang="ts">
-import { reactive } from "vue";
+import { ref, reactive, onMounted, watch } from "vue";
 import type { PostsData } from "@/types/api";
 import axios from "axios";
 import MainLayout from "@/layouts/MainLayout/MainLayout.vue";
 import PostCard from "@/components/organisms/PostCard/PostCard.vue";
+import PaginationBar from "@/components/organisms/PaginationBar/PaginationBar.vue";
 
+const maxPage = ref(1);
+const pageNum = ref(1);
 const messageData: PostsData = reactive({
-  data: [],
+  data: {
+    posts: [],
+    maxPage: maxPage.value,
+  },
   isLoaded: false,
   error: {},
 });
 
-axios.get("/msw/index").then((res) => {
-  messageData.data = res.data;
-  messageData.isLoaded = true;
-});
+const fetchPosts = (page: number) => {
+  axios.get(`/msw/index?page=${page}`).then((res) => {
+    console.log(page);
+    const data = res.data;
+    console.log(data);
+    messageData.data.posts = data.posts;
+    messageData.data.maxPage = data.max_page;
+    maxPage.value = messageData.data.maxPage;
+
+    messageData.isLoaded = true;
+  });
+};
+
+const onChange = (num: number) => {
+  pageNum.value = num;
+};
+
+watch(pageNum, () => fetchPosts(pageNum.value));
+onMounted(() => fetchPosts(pageNum.value));
 </script>
 
 <template>
@@ -24,10 +45,13 @@ axios.get("/msw/index").then((res) => {
       <div :class="$style.create_link_wrapper">
         <a href="/post/create" :class="$style.create_link">create</a>
       </div>
-      <div :class="$style.cards">
-        <div v-for="post in messageData.data" :key="post.id">
-          <PostCard :post="post" />
+      <div v-if="messageData.isLoaded">
+        <div :class="$style.cards">
+          <div v-for="post in messageData.data.posts" :key="post.id">
+            <PostCard :post="post" />
+          </div>
         </div>
+        <PaginationBar :maxPage="maxPage" :paddingSize="1" @change="onChange" />
       </div>
     </div>
   </main-layout>
