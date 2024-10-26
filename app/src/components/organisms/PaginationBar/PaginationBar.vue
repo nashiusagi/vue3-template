@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import { type Ref, ref, onMounted, watch } from "vue";
+import { usePaginationBar } from "./usePaginationBar.ts";
 
 const props = defineProps<{
   maxPage: number;
 }>();
 
-const pad = 1;
+const padding = 1;
 const pageNum: Ref<number> = ref(1);
 const pageItem: Ref<string[]> = ref([]);
-
 const emits = defineEmits(["change"]);
+const { pushNumberItem, setPaginationItems } = usePaginationBar();
 
 const showByPageNum = (index: number) => {
   pageNum.value = index;
@@ -27,45 +28,12 @@ const showNextPage = () => {
   emits("change", pageNum.value);
 };
 
-const pushNumberItem = (array: string[], numberItem: string) => {
-  if (array.indexOf(numberItem) === -1) {
-    array.push(numberItem);
-  }
-  return true;
-};
-
-const setPageItem = () => {
-  // reinitialize
-  pageItem.value.length = 0;
-
-  pageItem.value.push("1");
-  if (pageNum.value === 1) {
-    pageItem.value.push("2", "3", "...", String(props.maxPage));
-  } else if (pageNum.value === props.maxPage) {
-    pageItem.value.push(
-      "...",
-      String(props.maxPage - 2),
-      String(props.maxPage - 1),
-      String(props.maxPage),
-    );
-  } else {
-    if (pageNum.value - 2 * pad > 1) {
-      pageItem.value.push("...");
-    }
-    pushNumberItem(pageItem.value, String(pageNum.value - 1));
-    pushNumberItem(pageItem.value, String(pageNum.value));
-    pushNumberItem(pageItem.value, String(pageNum.value + 1));
-
-    if (pageNum.value + 2 * pad < props.maxPage) {
-      pageItem.value.push("...");
-    }
-  }
-  pushNumberItem(pageItem.value, String(props.maxPage));
-  console.log(pageNum.value)
-};
-
-watch(pageNum, setPageItem);
-onMounted(setPageItem);
+watch(pageNum, () =>
+  setPaginationItems(pageItem.value, pageNum.value, props.maxPage, padding),
+);
+onMounted(() =>
+  setPaginationItems(pageItem.value, pageNum.value, props.maxPage, padding),
+);
 </script>
 
 <template>
