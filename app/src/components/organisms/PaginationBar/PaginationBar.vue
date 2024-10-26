@@ -4,9 +4,9 @@ import { usePaginationBar } from "./usePaginationBar.ts";
 
 const props = defineProps<{
   maxPage: number;
+  paddingSize?: number;
 }>();
 
-const padding = 1;
 const pageNum: Ref<number> = ref(1);
 const pageItem: Ref<string[]> = ref([]);
 const emits = defineEmits(["change"]);
@@ -29,10 +29,20 @@ const showNextPage = () => {
 };
 
 watch(pageNum, () =>
-  setPaginationItems(pageItem.value, pageNum.value, props.maxPage, padding),
+  setPaginationItems(
+    pageItem.value,
+    pageNum.value,
+    props.maxPage,
+    props.paddingSize,
+  ),
 );
 onMounted(() =>
-  setPaginationItems(pageItem.value, pageNum.value, props.maxPage, padding),
+  setPaginationItems(
+    pageItem.value,
+    pageNum.value,
+    props.maxPage,
+    props.paddingSize,
+  ),
 );
 </script>
 

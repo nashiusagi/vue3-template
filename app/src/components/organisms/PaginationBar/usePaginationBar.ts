@@ -14,30 +14,16 @@ export function usePaginationBar() {
   ) => {
     paginationItems.length = 0;
     paginationItems.push("1");
-
-    if (currentPageNum === 1) {
-      paginationItems.push("2", "3", "...", String(maxPageNum));
-    } else if (currentPageNum === maxPageNum) {
-      paginationItems.push(
-        "...",
-        String(maxPageNum - 2),
-        String(maxPageNum - 1),
-        String(maxPageNum),
-      );
-    } else {
-      if (currentPageNum - padding > 2) {
-        paginationItems.push("...");
+    if (currentPageNum - padding > 2) {
+      paginationItems.push("...");
+    }
+    for (let idx = -1 * padding; idx <= padding; idx++) {
+      if (currentPageNum + idx > 1 && currentPageNum + idx < maxPageNum) {
+        pushNumberItem(paginationItems, String(currentPageNum + idx));
       }
-
-      for (let idx = -1 * padding; idx <= padding; idx++) {
-        if (currentPageNum + idx > 1 && currentPageNum + idx < maxPageNum) {
-          pushNumberItem(paginationItems, String(currentPageNum + idx));
-        }
-      }
-
-      if (currentPageNum + padding < maxPageNum - 1) {
-        paginationItems.push("...");
-      }
+    }
+    if (currentPageNum + padding < maxPageNum - 1) {
+      paginationItems.push("...");
     }
     pushNumberItem(paginationItems, String(maxPageNum));
   };
