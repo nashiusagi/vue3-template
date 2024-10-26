@@ -17,9 +17,11 @@ const messageData: PostsData = reactive({
   error: {},
 });
 
-const fetchPosts = (page = 1) => {
-  axios.get(`/msw/index?page=${page.value}`).then((res) => {
+const fetchPosts = (page: number) => {
+  axios.get(`/msw/index?page=${page}`).then((res) => {
+    console.log(page);
     const data = res.data;
+    console.log(data);
     messageData.data.posts = data.posts;
     messageData.data.maxPage = data.max_page;
     maxPage.value = messageData.data.maxPage;
@@ -32,8 +34,8 @@ const onChange = (num: number) => {
   pageNum.value = num;
 };
 
-watch(pageNum, () => fetchPosts(pageNum));
-onMounted(() => fetchPosts());
+watch(pageNum, () => fetchPosts(pageNum.value));
+onMounted(() => fetchPosts(pageNum.value));
 </script>
 
 <template>

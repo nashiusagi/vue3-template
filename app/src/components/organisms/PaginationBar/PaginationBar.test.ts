@@ -8,10 +8,11 @@ describe("PaginationBarのテスト", () => {
     const wrapper = mount(PaginationBar, {
       props: {
         maxPage: 12,
+        paddingSize: 1,
       },
     });
-    console.log(wrapper.html());
     await nextTick();
-    expect(wrapper.findAll("li").length).toBe(4);
+
+    expect(wrapper.findAll("li").length).toBe(6);
   });
 });
