@@ -50,9 +50,3 @@ $ yarn test:unit
 $ yarn playwright install
 $ yarn playwright test
 ```
-
-## ESLint
-以下で設定の一覧を取得できる
-```bash
-$ yarn eslint --print-config src/App.vue > config.json
-```
