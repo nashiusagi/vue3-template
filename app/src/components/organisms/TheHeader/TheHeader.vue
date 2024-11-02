@@ -10,12 +10,12 @@ watch(useDark(), () => {
   isDark.value = useDark().value;
 });
 
-const breakpoints = useBreakpoints(breakpointsElement)
-const isMobileMode = breakpoints.smallerOrEqual("md")
-const isMenuOpenWhenMobile = ref(false)
+const breakpoints = useBreakpoints(breakpointsElement);
+const isMobileMode = breakpoints.smallerOrEqual("md");
+const isMenuOpenWhenMobile = ref(false);
 const toggleIsMenuVisible = () => {
-  isMenuOpenWhenMobile.value = !isMenuOpenWhenMobile.value
-}
+  isMenuOpenWhenMobile.value = !isMenuOpenWhenMobile.value;
+};
 </script>
 
 <template>
