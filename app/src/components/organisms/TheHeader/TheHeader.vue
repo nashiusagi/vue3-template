@@ -2,8 +2,8 @@
 import DarkModeToggleButton from "@/components/atoms/DarkModeToggleButton/DarkModeToggleButton.vue";
 import HeaderItem from "@/components/atoms/HeaderItem/HeaderItem.vue";
 import { useBreakpoints, breakpointsElement, useDark } from "@vueuse/core";
-import { Menu } from "@element-plus/icons-vue";
 import { ref, watch } from "vue";
+import MenuButton from "@/components/atoms/MenuButton/MenuButton.vue";
 
 const isDark = ref(useDark().value);
 watch(useDark(), () => {
@@ -21,9 +21,7 @@ const toggleIsMenuVisible = () => {
 <template>
   <div :class="[$style.headerWrapper, { [$style.dark]: isDark }]">
     <div v-if="isMobileMode" :class="$style.headerContainer">
-      <button @click="toggleIsMenuVisible" :class="[$style.menuButton, { [$style.dark]: isDark }]">
-        <el-icon :size="24"><Menu /></el-icon>
-      </button>
+      <MenuButton @click="toggleIsMenuVisible" />
       <div>
         <span :class="[$style.headerTitle, { [$style.dark]: isDark }]"
           >Vue3 Template</span
