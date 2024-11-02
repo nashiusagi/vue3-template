@@ -1,18 +1,35 @@
 <script setup lang="ts">
 import DarkModeToggleButton from "@/components/atoms/DarkModeToggleButton/DarkModeToggleButton.vue";
 import HeaderItem from "@/components/atoms/HeaderItem/HeaderItem.vue";
-import { useDark } from "@vueuse/core";
+import { useBreakpoints, breakpointsElement, useDark } from "@vueuse/core";
+import { Menu } from "@element-plus/icons-vue";
 import { ref, watch } from "vue";
 
 const isDark = ref(useDark().value);
 watch(useDark(), () => {
   isDark.value = useDark().value;
 });
+
+const breakpoints = useBreakpoints(breakpointsElement)
+const isMobileMode = breakpoints.smallerOrEqual("md")
 </script>
 
 <template>
   <div :class="[$style.headerWrapper, { [$style.dark]: isDark }]">
-    <div :class="$style.headerContainer">
+    <div v-if="isMobileMode" :class="$style.headerContainer">
+      <button :class="[$style.menuButton, { [$style.dark]: isDark }]">
+        <el-icon :size="24"><Menu /></el-icon>
+      </button>
+      <div>
+        <span :class="[$style.headerTitle, { [$style.dark]: isDark }]"
+          >Vue3 Template</span
+        >
+      </div>
+      <div :class="$style.dark_mode_button_container">
+        <DarkModeToggleButton />
+      </div>
+    </div>
+    <div v-else :class="$style.headerContainer">
       <div>
         <span :class="[$style.headerTitle, { [$style.dark]: isDark }]"
           >Vue3 Template</span
@@ -60,6 +77,15 @@ watch(useDark(), () => {
 .headerTitle.dark {
   color: #eee;
   font-size: 32px;
+}
+
+.menuButton {
+  background-color: #eee;
+  color: #000;
+}
+.menuButton.dark {
+  background-color: #111;
+  color: #fff;
 }
 
 .header_right {
