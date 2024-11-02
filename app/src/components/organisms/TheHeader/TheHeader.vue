@@ -12,12 +12,16 @@ watch(useDark(), () => {
 
 const breakpoints = useBreakpoints(breakpointsElement)
 const isMobileMode = breakpoints.smallerOrEqual("md")
+const isMenuOpenWhenMobile = ref(false)
+const toggleIsMenuVisible = () => {
+  isMenuOpenWhenMobile.value = !isMenuOpenWhenMobile.value
+}
 </script>
 
 <template>
   <div :class="[$style.headerWrapper, { [$style.dark]: isDark }]">
     <div v-if="isMobileMode" :class="$style.headerContainer">
-      <button :class="[$style.menuButton, { [$style.dark]: isDark }]">
+      <button @click="toggleIsMenuVisible" :class="[$style.menuButton, { [$style.dark]: isDark }]">
         <el-icon :size="24"><Menu /></el-icon>
       </button>
       <div>
@@ -47,6 +51,14 @@ const isMobileMode = breakpoints.smallerOrEqual("md")
         </div>
       </div>
     </div>
+  </div>
+  <div v-if="isMobileMode&&isMenuOpenWhenMobile">
+    <nav :class="$style.menuList">
+      <HeaderItem :link="'/index'" :title="'index'" :class="$style.menu" />
+      <HeaderItem :link="'/sample'" :title="'sample'" :class="$style.menu" />
+      <HeaderItem :link="'/sample'" :title="'sample2'" :class="$style.menu" />
+      <HeaderItem :link="'/sample'" :title="'sample3'" :class="$style.menu" />
+    </nav>
   </div>
 </template>
 
@@ -93,6 +105,17 @@ const isMobileMode = breakpoints.smallerOrEqual("md")
   flex-direction: row;
   height: 100%;
   gap: 8px;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.menu {
+  width: 100%;
+  border: 1px solid #222;
+  border-radius: 4px;
 }
 
 .headerNav {
