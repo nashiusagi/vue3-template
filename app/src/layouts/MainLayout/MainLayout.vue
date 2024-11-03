@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import SideBar from "@/components/organisms/SideBar/SideBar.vue";
 import TheHeader from "@/components/organisms/TheHeader/TheHeader.vue";
+import { useBreakpoints, breakpointsElement } from "@vueuse/core";
+
+const breakpoints = useBreakpoints(breakpointsElement);
+const isMobileMode = breakpoints.smallerOrEqual("md");
 </script>
 
 <template>
@@ -8,7 +12,14 @@ import TheHeader from "@/components/organisms/TheHeader/TheHeader.vue";
     <header :class="$style.header">
       <TheHeader />
     </header>
-    <div :class="$style.container">
+    <div v-if="isMobileMode" :class="$style.mobileMain">
+      <section>
+        <div :class="$style.main_content">
+          <slot />
+        </div>
+      </section>
+    </div>
+    <div v-else :class="$style.container">
       <aside width="200px" :class="$style.side_menu">
         <side-bar />
       </aside>
@@ -55,6 +66,12 @@ import TheHeader from "@/components/organisms/TheHeader/TheHeader.vue";
   box-sizing: border-box;
   flex-shrink: 0;
   width: 20%;
+}
+
+.mobileMain {
+  width: 100%;
+  height: 100%;
+  padding: 100px 0 0 0;
 }
 
 .main {
