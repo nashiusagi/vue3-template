@@ -114,6 +114,7 @@ const toggleIsMenuVisible = () => {
   width: 100%;
   border: 1px solid #222;
   border-radius: 4px;
+  background-color: #fff;
 }
 
 .headerNav {
