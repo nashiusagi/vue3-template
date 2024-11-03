@@ -18,3 +18,9 @@ export interface PostData {
   isLoaded: boolean;
   error: object;
 }
+
+export interface HeaderItemData {
+  id: number;
+  title: string;
+  link: string;
+}

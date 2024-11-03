@@ -4,6 +4,7 @@ import HeaderItem from "@/components/atoms/HeaderItem/HeaderItem.vue";
 import { useBreakpoints, breakpointsElement, useDark } from "@vueuse/core";
 import { ref, watch } from "vue";
 import MenuButton from "@/components/atoms/MenuButton/MenuButton.vue";
+import type { HeaderItemData } from "@/types/api";
 
 const isDark = ref(useDark().value);
 watch(useDark(), () => {
@@ -16,6 +17,29 @@ const isMenuOpenWhenMobile = ref(false);
 const toggleIsMenuVisible = () => {
   isMenuOpenWhenMobile.value = !isMenuOpenWhenMobile.value;
 };
+
+const headerItems: Array<HeaderItemData> = [
+  {
+    id: 1,
+    title: "index",
+    link: "/index",
+  },
+  {
+    id: 2,
+    title: "sample",
+    link: "/sample",
+  },
+  {
+    id: 3,
+    title: "sample2",
+    link: "/sample",
+  },
+  {
+    id: 4,
+    title: "sample3",
+    link: "/sample",
+  },
+];
 </script>
 
 <template>
@@ -38,11 +62,8 @@ const toggleIsMenuVisible = () => {
         >
       </div>
       <div :class="$style.header_right">
-        <nav :class="$style.headerNav">
-          <HeaderItem :link="'/index'" :title="'index'" />
-          <HeaderItem :link="'/sample'" :title="'sample'" />
-          <HeaderItem :link="'/sample'" :title="'sample2'" />
-          <HeaderItem :link="'/sample'" :title="'sample3'" />
+        <nav v-for="headerItem in headerItems" :key="headerItem.id" :class="$style.headerNav">
+          <HeaderItem :link="headerItem.link" :title="headerItem.title" />
         </nav>
         <div :class="$style.dark_mode_button_container">
           <DarkModeToggleButton />
@@ -51,11 +72,8 @@ const toggleIsMenuVisible = () => {
     </div>
   </div>
   <div v-if="isMobileMode&&isMenuOpenWhenMobile">
-    <nav :class="$style.menuList">
-      <HeaderItem :link="'/index'" :title="'index'" :class="$style.menu" />
-      <HeaderItem :link="'/sample'" :title="'sample'" :class="$style.menu" />
-      <HeaderItem :link="'/sample'" :title="'sample2'" :class="$style.menu" />
-      <HeaderItem :link="'/sample'" :title="'sample3'" :class="$style.menu" />
+    <nav v-for="headerItem in headerItems" :key="headerItem.id" :class="$style.menuList">
+      <HeaderItem :link="headerItem.link" :title="headerItem.title" :class="$style.menu" />
     </nav>
   </div>
 </template>
