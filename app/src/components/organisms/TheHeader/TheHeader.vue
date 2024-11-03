@@ -45,14 +45,15 @@ const headerItems: Array<HeaderItemData> = [
 <template>
   <div :class="[$style.headerWrapper, { [$style.dark]: isDark }]">
     <div v-if="isMobileMode" :class="$style.headerContainer">
-      <MenuButton @click="toggleIsMenuVisible" />
+      <div>
+        <MenuButton @click="toggleIsMenuVisible" :class="$style.menuButton" />
+      </div>
       <div>
         <span :class="[$style.headerTitle, { [$style.dark]: isDark }]"
           >Vue3 Template</span
         >
       </div>
       <div :class="$style.dark_mode_button_container">
-        <DarkModeToggleButton />
       </div>
     </div>
     <div v-else :class="$style.headerContainer">
@@ -108,12 +109,7 @@ const headerItems: Array<HeaderItemData> = [
 }
 
 .menuButton {
-  background-color: #eee;
-  color: #000;
-}
-.menuButton.dark {
-  background-color: #111;
-  color: #fff;
+  padding: 8px;
 }
 
 .header_right {
