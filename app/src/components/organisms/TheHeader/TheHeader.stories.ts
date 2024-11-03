@@ -15,4 +15,14 @@ export const Default: Story = {
   }),
 };
 
+export const Mobile: Story = {
+  render: () => ({
+    components: { TheHeader },
+    template: "<TheHeader />",
+  }),
+  parameters: {
+    viewport: { defaultViewport: "iphonex" },
+  },
+};
+
 export default meta;
