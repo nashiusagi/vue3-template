@@ -82,7 +82,7 @@
             mv ./storybook-static ./deploy/
 
         - name: Create Top Page
-          run: echo echo "<h1>Vue3 template deployed pages</h1>\n  <a href="/coverage">coverage</a>\n  <a href="/storybook-static">storybook</a>" >> ./deploy/index.html
+          run: echo "<h1>Vue3 template deployed pages</h1>  <p><a href='/vue3-template/coverage'>coverage</a></p>  <p><a href='/vue3-template/storybook-static'>storybook</a></p>" >> ./deploy/index.html
   
         - name: Deploy Coverage Result 
           uses: peaceiris/actions-gh-pages@v4
