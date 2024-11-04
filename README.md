@@ -1,5 +1,6 @@
 # Vue3 + TypeScript + Viteテンプレートプロジェクト
-[![coverage](https://nashiusagi.github.io/vue3-template/coverage.svg)](https://nashiusagi.github.io/vue3-template/)
+[![coverage](https://nashiusagi.github.io/vue3-template/coverage/coverage.svg)](https://nashiusagi.github.io/vue3-template/coverage)
+[![storybook](https://nashiusagi.github.io/vue3-template/storybook-static/storybook.svg)](https://nashiusagi.github.io/vue3-template/storybook-static)
 
 ## 環境
 * Vue3

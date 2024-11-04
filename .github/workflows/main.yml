@@ -80,6 +80,7 @@
             mkdir ./deploy
             mv ./coverage ./deploy/
             mv ./storybook-static ./deploy/
+            curl -o deploy/storybook-static/storybook.svg https://img.shields.io/badge/storybook-build-8A2BE2
 
         - name: Create Top Page
           run: echo "<h1>Vue3 template deployed pages</h1>  <p><a href='/vue3-template/coverage'>coverage</a></p>  <p><a href='/vue3-template/storybook-static'>storybook</a></p>" >> ./deploy/index.html
