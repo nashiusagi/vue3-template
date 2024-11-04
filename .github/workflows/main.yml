@@ -4,7 +4,7 @@
   on:
     push:
       branches:
-        - main
+        - feature/**
   
   jobs:
     setup:
@@ -41,7 +41,7 @@
             path: ./app/node_modules
             key: ${{ runner.os }}-yarn-${{ hashFiles('app/yarn.lock') }}
 
-    deploy-coverage:
+    deploy-all:
       runs-on: ubuntu-22.04
       defaults:
         run:
@@ -71,9 +71,21 @@
   
         - name: Measure Coverage
           run: scripts/coverage.sh
+
+        - name: Build storybook
+          run: yarn build-storybook
+          
+        - name: Replace Files
+          run: |
+            mkdir ./deploy
+            mv ./coverage ./deploy/
+            mv ./storybook-static ./deploy/
+
+        - name: Create Top Page
+          run: echo echo "<h1>Vue3 template deployed pages</h1>\n  <a href="/coverage">coverage</a>\n  <a href="/storybook-static">storybook</a>" >> ./deploy/index.html
   
         - name: Deploy Coverage Result 
           uses: peaceiris/actions-gh-pages@v4
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./app/coverage
+            publish_dir: ./app/deploy
