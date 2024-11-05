@@ -33,7 +33,7 @@
     "@playwright/test": "^1.48.1",
     "@storybook/addon-viewport": "^8.4.1",
     "@storybook/vue3-vite": "^8.3.6",
-    "@types/node": "^22.8.6",
+    "@types/node": "^22.8.7",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vitest/coverage-v8": "^2.1.1",
     "@vue/test-utils": "^2.4.6",
