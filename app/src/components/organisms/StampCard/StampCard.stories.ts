@@ -62,4 +62,25 @@ export const Default: Story = {
   }),
 };
 
+export const TwoContents: Story = {
+  args: {
+    stampContents: [
+      {
+        text: "1",
+        status: "Checked",
+      },
+      {
+        text: "2",
+        status: "NotChecked",
+      },
+    ],
+  },
+  render: (args) => ({
+    components: { StampCard },
+    setup() {
+      return { ...args };
+    },
+    template: `<StampCard :stampContents="stampContents" />`,
+  }),
+};
 export default meta;

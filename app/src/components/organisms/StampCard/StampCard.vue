@@ -11,7 +11,7 @@ defineProps({
 
 <template>
   <div :class="$style.stamp_card">
-    <div v-for="(stampContent, index) in stampContents" :key="index" >
+    <div v-for="(stampContent, index) in stampContents" :key="index" :class="$style.stamp">
       <NotCheckedStamp v-if="stampContent.status == 'NotChecked'" :text="stampContent.text"/>
       <CheckedStamp v-else-if="stampContent.status == 'Checked'" />
       <ErrorStamp v-else />
@@ -28,6 +28,12 @@ defineProps({
 
   border: 2px solid #000;
   padding: 16px;
-  width: calc( 48px * 5 + 4px * 4 + 16px * 2);
+  width: calc( 54px * 5 + 4px * 4 );
+  height: calc( 54px * 2 + 4px );
+}
+
+.stamp {
+  width: 54px;
+  height: 54px;
 }
 </style>
