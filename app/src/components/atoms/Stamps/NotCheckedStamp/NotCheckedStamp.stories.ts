@@ -4,7 +4,7 @@ import NotCheckedStamp from "./NotCheckedStamp.vue";
 type Story = StoryObj<typeof NotCheckedStamp>;
 
 const meta: Meta<typeof NotCheckedStamp> = {
-  title: "atoms/NotCheckedStamp",
+  title: "atoms/stamps/NotCheckedStamp",
   component: NotCheckedStamp,
 };
 

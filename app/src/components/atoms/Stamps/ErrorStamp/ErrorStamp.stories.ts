@@ -4,7 +4,7 @@ import ErrorStamp from "./ErrorStamp.vue";
 type Story = StoryObj<typeof ErrorStamp>;
 
 const meta: Meta<typeof ErrorStamp> = {
-  title: "atoms/ErrorStamp",
+  title: "atoms/stamps/ErrorStamp",
   component: ErrorStamp,
 };
 

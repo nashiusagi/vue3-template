@@ -4,7 +4,7 @@ import CheckedStamp from "./CheckedStamp.vue";
 type Story = StoryObj<typeof CheckedStamp>;
 
 const meta: Meta<typeof CheckedStamp> = {
-  title: "atoms/CheckedStamp",
+  title: "atoms/stamps/CheckedStamp",
   component: CheckedStamp,
 };
 
