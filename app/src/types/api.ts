@@ -24,3 +24,10 @@ export interface HeaderItemData {
   title: string;
   link: string;
 }
+
+export type StampStatus = "Checked" | "NotChecked" | "Error";
+
+export interface StampData {
+  text: string;
+  status: StampStatus;
+}
