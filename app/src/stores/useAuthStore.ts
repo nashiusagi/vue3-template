@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 
 export const useAuthStore = defineStore(
-  "auth", 
+  "auth",
   () => {
     const isLoggedIn = ref(false);
     const accessToken = ref("");
@@ -29,6 +29,6 @@ export const useAuthStore = defineStore(
     return { isLoggedIn, accessToken, refreshToken, login, logout, $reset };
   },
   {
-    persist: true
+    persist: true,
   },
 );

@@ -22,6 +22,10 @@ const routes: Array<RouteRecordRaw> = [
     path: "/post/create",
     component: () => import("@/pages/CreatePost.vue"),
   },
+  {
+    path: "/login",
+    component: () => import("@/pages/LoginPage.vue"),
+  },
 ];
 
 export const router: Router = createRouter({

@@ -1,13 +1,17 @@
 <script lang="ts" setup>
 import { reactive, ref } from "vue";
 import type { FormInstance, FormRules } from "element-plus";
+import axios from "axios";
+import { useAuthStore } from "@/stores/useAuthStore";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const ruleFormRef = ref<FormInstance>();
 
 const ruleForm = reactive({
   email: "",
   pass: "",
-  checkPass: "",
 });
 
 const rules = reactive<FormRules<typeof ruleForm>>({
@@ -37,13 +41,23 @@ const rules = reactive<FormRules<typeof ruleForm>>({
   ],
 });
 
+const authStore = useAuthStore();
+const { login } = authStore;
+
 const submitForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return;
   formEl.validate((valid) => {
     if (valid) {
+      axios.post("/msw/login", { post: ruleForm }).then((response) => {
+        const data = response.data;
+        login(data.accessToken, data.refreshToken);
+        console.log(data);
+
+        router.push("/index");
+      });
       console.log("submit!");
     } else {
-      console.log("error submit!");
+      console.error("error submit!");
     }
   });
 };
