@@ -4,6 +4,8 @@ import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import App from "./App.vue";
 import { router } from "./router";
+import { createPinia } from "pinia";
+import { createPersistedState } from "pinia-plugin-persistedstate";
 
 async function mswWorker() {
   if (import.meta.env.VITE_MOCKED_API === "true") {
@@ -20,3 +22,9 @@ mswWorker().then(() => {
   app.use(ElementPlus);
   app.mount("#app");
 });
+
+const pinia = createPinia();
+pinia.use(createPersistedState());
+const app = createApp(App);
+app.use(pinia);
+app.mount("#app");
