@@ -31,7 +31,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@playwright/test": "^1.49.0",
-    "@storybook/addon-viewport": "^8.4.2",
+    "@storybook/addon-viewport": "^8.4.5",
     "@storybook/vue3-vite": "^8.4.4",
     "@types/node": "^22.8.7",
     "@vitejs/plugin-vue": "^5.1.4",
