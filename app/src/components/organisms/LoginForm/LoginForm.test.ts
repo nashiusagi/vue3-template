@@ -4,12 +4,12 @@ import LoginForm from "./LoginForm.vue";
 import ElementPlus from "element-plus";
 import { beforeEach } from "node:test";
 import { createPinia, setActivePinia } from "pinia";
-import { createTestingPinia } from '@pinia/testing'
+import { createTestingPinia } from "@pinia/testing";
 
 describe("LoginFormのテスト", () => {
-  beforeEach(()=>{
-    setActivePinia(createPinia())
-  })
+  beforeEach(() => {
+    setActivePinia(createPinia());
+  });
   test("正常に表示がされる", () => {
     const wrapper = mount(LoginForm, {
       global: {
@@ -20,18 +20,17 @@ describe("LoginFormのテスト", () => {
               auth: {
                 isLoggedIn: false,
                 accessToken: "",
-                refreshToken: ""
-              }
+                refreshToken: "",
+              },
             },
-            createSpy: vi.fn
-          })
+            createSpy: vi.fn,
+          }),
         ],
       },
       attachTo: document.body,
     });
     const inputForms = wrapper.findAll(".el-input__wrapper");
 
-    expect(inputForms.length).toBe(2)
-  })
-
-})
+    expect(inputForms.length).toBe(2);
+  });
+});

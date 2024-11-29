@@ -7,8 +7,8 @@ type Story = StoryObj<typeof LoginForm>;
 
 const pinia = createPinia();
 setup((app: App) => {
-  app.use(pinia)
-})
+  app.use(pinia);
+});
 
 const meta: Meta<typeof LoginForm> = {
   title: "organisms/LoginForm",
