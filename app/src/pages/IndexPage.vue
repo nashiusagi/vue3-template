@@ -5,6 +5,8 @@ import axios from "axios";
 import MainLayout from "@/layouts/MainLayout/MainLayout.vue";
 import PostCard from "@/components/organisms/PostCard/PostCard.vue";
 import PaginationBar from "@/components/organisms/PaginationBar/PaginationBar.vue";
+import { useAuthStore } from "@/stores/useAuthStore";
+import { storeToRefs } from "pinia";
 
 const maxPage = ref(1);
 const pageNum = ref(1);
@@ -30,6 +32,10 @@ const fetchPosts = (page: number) => {
   });
 };
 
+const authStore = useAuthStore();
+const { isLoggedIn } = storeToRefs(authStore);
+const { logout } = authStore;
+
 const onChange = (num: number) => {
   pageNum.value = num;
 };
@@ -44,6 +50,10 @@ onMounted(() => fetchPosts(pageNum.value));
       <h1>Hello, this is an index page!</h1>
       <div :class="$style.create_link_wrapper">
         <a href="/post/create" :class="$style.create_link">create</a>
+      </div>
+      <div :class="$style.create_link_wrapper">
+        <a v-if="!isLoggedIn" href="/login" :class="$style.create_link">Login</a>
+        <a v-if="isLoggedIn" @click="logout" :class="$style.create_link">Logout</a>
       </div>
       <div v-if="messageData.isLoaded">
         <div :class="$style.cards">
