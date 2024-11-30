@@ -9,6 +9,7 @@ export const postRequest = () => {
         id: 1,
         title: "Post 1",
         body: "this is a sample body 1",
+        thumbnailPath: "/img/cat.jpg",
       });
     }),
   ];

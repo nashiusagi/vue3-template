@@ -2,6 +2,7 @@ export interface Post {
   id: number;
   title: string;
   body: string;
+  thumbnailPath?: string;
 }
 
 export interface PostsData {
