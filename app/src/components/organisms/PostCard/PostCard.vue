@@ -56,6 +56,8 @@ watch(useDark(), () => {
 
 .post_body {
   display: flex;
+  position: absolute;
+  z-index: -1;
   gap: 20px;
   margin-top: -130px;
   padding: 0 0 0 3em;
