@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps<{
-  imagePath: string
-}>()
+  imagePath: string;
+}>();
 </script>
 
 <template>
