@@ -33,7 +33,7 @@
     "@biomejs/biome": "1.9.4",
     "@pinia/testing": "^0.1.7",
     "@playwright/test": "^1.49.1",
-    "@storybook/addon-viewport": "^8.4.7",
+    "@storybook/addon-viewport": "^8.5.0",
     "@storybook/vue3-vite": "^8.5.0",
     "@types/node": "^22.10.7",
     "@vitejs/plugin-vue": "^5.2.1",
