@@ -34,7 +34,7 @@
     "@pinia/testing": "^1.0.0",
     "@playwright/test": "^1.50.1",
     "@storybook/addon-viewport": "^8.5.2",
-    "@storybook/vue3-vite": "^8.5.2",
+    "@storybook/vue3-vite": "^8.5.6",
     "@types/node": "^22.13.5",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitest/coverage-v8": "^2.1.1",
