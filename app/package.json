@@ -45,7 +45,7 @@
     "storybook": "^8.6.4",
     "typescript": "^5.8.2",
     "vite": "^6.2.0",
-    "vitest": "^3.0.6",
+    "vitest": "^3.0.9",
     "vue-tsc": "^2.2.4"
   },
   "msw": {
