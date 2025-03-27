@@ -720,12 +720,12 @@
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-8.5.6.tgz#63ab2c8cf47cab8a62898251cfd8828d8c2a8045"
   integrity sha512-d2mhnnce2C03lRhBEtVR9lS78YueQGBS949R3QXPsEXmrkfDMpcnFI3DIOByjnea6ZeS0+i4lYjnfiAJb0oiMQ==
 
-"@storybook/core@8.6.4":
-  version "8.6.4"
-  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-8.6.4.tgz#7cfb5dae8e2ce22eaab8c6c04ef63d7c20686692"
-  integrity sha512-glDbjEBi3wokw1T+KQtl93irHO9N0LCwgylWfWVXYDdQjUJ7pGRQGnw73gPX7Ds9tg3myXFC83GjmY94UYSMbA==
+"@storybook/core@8.6.10":
+  version "8.6.10"
+  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-8.6.10.tgz#9e1f4391845e1c6c3beb3cb98791de58c610eb5f"
+  integrity sha512-VyhE/9/idPeeObsx+DyD8RR2iEwLJGL9rYz61r+1IrpndIVnlYD+vjxc0Y/1jTG1RvShWzEF2A/vzsJ9PzXqcw==
   dependencies:
-    "@storybook/theming" "8.6.4"
+    "@storybook/theming" "8.6.10"
     better-opn "^3.0.2"
     browser-assert "^1.2.1"
     esbuild "^0.18.0 || ^0.19.0 || ^0.20.0 || ^0.21.0 || ^0.22.0 || ^0.23.0 || ^0.24.0 || ^0.25.0"
@@ -764,10 +764,10 @@
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-8.5.6.tgz#b6740cfbb767ff6ad38322b87ed93c69c21d19f5"
   integrity sha512-WX0NjPn6sao56OCSm3NVPqBjFhLhMLPjjDwC4fHCW25HZgI+u7oByNk/7YHcxpBYtoHSWMKMiCjOSJuW6731+A==
 
-"@storybook/theming@8.6.4":
-  version "8.6.4"
-  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-8.6.4.tgz#d16f65320ad6e35db6cd3455b4d36cae58a87d2f"
-  integrity sha512-g9Ns4uenC9oAWETaJ/tEKEIPMdS+CqjNWZz5Wbw1bLNhXwADZgKrVqawzZi64+bYYtQ+i8VCTjPoFa6s2eHiDQ==
+"@storybook/theming@8.6.10":
+  version "8.6.10"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-8.6.10.tgz#0a24d38ca7d462ae965d59b04b831932edfa8a00"
+  integrity sha512-4E5ArcJ/bhrWtlYzQDbtA3O3pha/Ys0Ja6X4waJQ5UJENzUMdVz6vTLSUHtG5hNRmSqreogxe4Ed88+0JtY7NQ==
 
 "@storybook/vue3-vite@^8.5.6":
   version "8.5.6"
@@ -3028,12 +3028,12 @@ std-env@^3.8.0:
   resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.8.0.tgz#b56ffc1baf1a29dcc80a3bdf11d7fca7c315e7d5"
   integrity sha512-Bc3YwwCB+OzldMxOXJIIvC6cPRWr/LxOp48CdQTOkPyk/t4JWWJbrilwBd7RJzKV8QW7tJkcgAmeuLLJugl5/w==
 
-storybook@^8.6.4:
-  version "8.6.4"
-  resolved "https://registry.yarnpkg.com/storybook/-/storybook-8.6.4.tgz#cd33fa1082ef22d4784428ace4a3863ccdb30ec2"
-  integrity sha512-XXh1Acvf1r3BQX0BDLQw6yhZ7yUGvYxIcKOBuMdetnX7iXtczipJTfw0uyFwk0ltkKEE9PpJvivYmARF3u64VQ==
+storybook@^8.6.10:
+  version "8.6.10"
+  resolved "https://registry.yarnpkg.com/storybook/-/storybook-8.6.10.tgz#c3daa8c39abaeaddd5a8eae3dc7078fcd566a8e5"
+  integrity sha512-7LUD9hNllMZZhDJutxgejrpWI89rsBF+p2kCfWoJ9EuBTgRy8bbVQZlG7bE1gf7qLmnabnklsFslTakS2SbKRw==
   dependencies:
-    "@storybook/core" "8.6.4"
+    "@storybook/core" "8.6.10"
 
 strict-event-emitter@^0.5.1:
   version "0.5.1"
