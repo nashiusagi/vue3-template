@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "app"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     labels:
       - "yarn"
       - "library update"
