@@ -22,9 +22,12 @@ watch(useDark(), () => {
       :href="link"
       >{{ post.title }}</a
     >
-    <p :class="[$style.post_body, { [$style.dark]: isDark }]">
-      {{ post.body }}
-    </p>
+    <div :class="[$style.post_body, { [$style.dark]: isDark }]">
+      <img :src="post.thumbnailPath" height="100" />
+      <p>
+        {{ post.body }}
+      </p>
+    </div>
   </div>
 </template>
 
@@ -35,7 +38,7 @@ watch(useDark(), () => {
   box-sizing: border-box;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
   overflow: hidden;
-  height: 160px;
+  height: 220px;
 
   .dark {
     color: #bfcbd9;
@@ -52,8 +55,12 @@ watch(useDark(), () => {
 }
 
 .post_body {
-  margin-top: -70px;
-  padding: 0 3em;
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  gap: 20px;
+  margin-top: -130px;
+  padding: 0 0 0 3em;
   color: #111827;
   font-size: 18px;
   line-height: 125%;

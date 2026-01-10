@@ -46,11 +46,13 @@ export const sampleRequest = () => {
             id: 1,
             title: "Post 1",
             body: "this is a sample body 1",
+            thumbnailPath: "/img/cat.jpg",
           },
           {
             id: 2,
             title: "Post 2",
             body: "this is a sample body 2",
+            thumbnailPath: "/img/cat.jpg",
           },
           {
             id: 3,
