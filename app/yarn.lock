@@ -91,59 +91,59 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-1.0.2.tgz#bbe12dca5b4ef983a0d0af4b07b9bc90ea0ababa"
   integrity sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==
 
-"@biomejs/biome@2.3.14":
-  version "2.3.14"
-  resolved "https://registry.yarnpkg.com/@biomejs/biome/-/biome-2.3.14.tgz#b879cd5e0495334d4db7c49d6f3cc95b67d2909c"
-  integrity sha512-QMT6QviX0WqXJCaiqVMiBUCr5WRQ1iFSjvOLoTk6auKukJMvnMzWucXpwZB0e8F00/1/BsS9DzcKgWH+CLqVuA==
+"@biomejs/biome@2.4.6":
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/@biomejs/biome/-/biome-2.4.6.tgz#a9a313c6842c194e27792fbb601f6ca961b96196"
+  integrity sha512-QnHe81PMslpy3mnpL8DnO2M4S4ZnYPkjlGCLWBZT/3R9M6b5daArWMMtEfP52/n174RKnwRIf3oT8+wc9ihSfQ==
   optionalDependencies:
-    "@biomejs/cli-darwin-arm64" "2.3.14"
-    "@biomejs/cli-darwin-x64" "2.3.14"
-    "@biomejs/cli-linux-arm64" "2.3.14"
-    "@biomejs/cli-linux-arm64-musl" "2.3.14"
-    "@biomejs/cli-linux-x64" "2.3.14"
-    "@biomejs/cli-linux-x64-musl" "2.3.14"
-    "@biomejs/cli-win32-arm64" "2.3.14"
-    "@biomejs/cli-win32-x64" "2.3.14"
+    "@biomejs/cli-darwin-arm64" "2.4.6"
+    "@biomejs/cli-darwin-x64" "2.4.6"
+    "@biomejs/cli-linux-arm64" "2.4.6"
+    "@biomejs/cli-linux-arm64-musl" "2.4.6"
+    "@biomejs/cli-linux-x64" "2.4.6"
+    "@biomejs/cli-linux-x64-musl" "2.4.6"
+    "@biomejs/cli-win32-arm64" "2.4.6"
+    "@biomejs/cli-win32-x64" "2.4.6"
 
-"@biomejs/cli-darwin-arm64@2.3.14":
-  version "2.3.14"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-2.3.14.tgz#da942618e1dc2d19322bc11d5dacfe7d7616a502"
-  integrity sha512-UJGPpvWJMkLxSRtpCAKfKh41Q4JJXisvxZL8ChN1eNW3m/WlPFJ6EFDCE7YfUb4XS8ZFi3C1dFpxUJ0Ety5n+A==
+"@biomejs/cli-darwin-arm64@2.4.6":
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-2.4.6.tgz#f194ca00fd5c3c5567f3cb41bab701de4e1af513"
+  integrity sha512-NW18GSyxr+8sJIqgoGwVp5Zqm4SALH4b4gftIA0n62PTuBs6G2tHlwNAOj0Vq0KKSs7Sf88VjjmHh0O36EnzrQ==
 
-"@biomejs/cli-darwin-x64@2.3.14":
-  version "2.3.14"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-darwin-x64/-/cli-darwin-x64-2.3.14.tgz#3ad06cce8ef6d2b935582011bd0cc3ca98a9554d"
-  integrity sha512-PNkLNQG6RLo8lG7QoWe/hhnMxJIt1tEimoXpGQjwS/dkdNiKBLPv4RpeQl8o3s1OKI3ZOR5XPiYtmbGGHAOnLA==
+"@biomejs/cli-darwin-x64@2.4.6":
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-darwin-x64/-/cli-darwin-x64-2.4.6.tgz#fe268c18e81c361c8d80002130584fc5b87e5956"
+  integrity sha512-4uiE/9tuI7cnjtY9b07RgS7gGyYOAfIAGeVJWEfeCnAarOAS7qVmuRyX6d7JTKw28/mt+rUzMasYeZ+0R/U1Mw==
 
-"@biomejs/cli-linux-arm64-musl@2.3.14":
-  version "2.3.14"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-arm64-musl/-/cli-linux-arm64-musl-2.3.14.tgz#e92681273dc59ac57b75b72f1b64a67543e50f8c"
-  integrity sha512-LInRbXhYujtL3sH2TMCH/UBwJZsoGwfQjBrMfl84CD4hL/41C/EU5mldqf1yoFpsI0iPWuU83U+nB2TUUypWeg==
+"@biomejs/cli-linux-arm64-musl@2.4.6":
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-arm64-musl/-/cli-linux-arm64-musl-2.4.6.tgz#eadd88d8d2553b9d8d2039653c8e7959f64d6ac2"
+  integrity sha512-F/JdB7eN22txiTqHM5KhIVt0jVkzZwVYrdTR1O3Y4auBOQcXxHK4dxULf4z43QyZI5tsnQJrRBHZy7wwtL+B3A==
 
-"@biomejs/cli-linux-arm64@2.3.14":
-  version "2.3.14"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-arm64/-/cli-linux-arm64-2.3.14.tgz#bab43ee0a88ba15a6d59ec648a4b415d68d6eeb7"
-  integrity sha512-KT67FKfzIw6DNnUNdYlBg+eU24Go3n75GWK6NwU4+yJmDYFe9i/MjiI+U/iEzKvo0g7G7MZqoyrhIYuND2w8QQ==
+"@biomejs/cli-linux-arm64@2.4.6":
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-arm64/-/cli-linux-arm64-2.4.6.tgz#ceebfa81aa3e39e9a1a7ddf36868800033bc78d6"
+  integrity sha512-kMLaI7OF5GN1Q8Doymjro1P8rVEoy7BKQALNz6fiR8IC1WKduoNyteBtJlHT7ASIL0Cx2jR6VUOBIbcB1B8pew==
 
-"@biomejs/cli-linux-x64-musl@2.3.14":
-  version "2.3.14"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-x64-musl/-/cli-linux-x64-musl-2.3.14.tgz#ee90f7110dafdedf4644e0a27ac242975dcd88d3"
-  integrity sha512-KQU7EkbBBuHPW3/rAcoiVmhlPtDSGOGRPv9js7qJVpYTzjQmVR+C9Rfcz+ti8YCH+zT1J52tuBybtP4IodjxZQ==
+"@biomejs/cli-linux-x64-musl@2.4.6":
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-x64-musl/-/cli-linux-x64-musl-2.4.6.tgz#4cfbe22aa50576cec437e370b2048ebfa6d88f3c"
+  integrity sha512-C9s98IPDu7DYarjlZNuzJKTjVHN03RUnmHV5htvqsx6vEUXCDSJ59DNwjKVD5XYoSS4N+BYhq3RTBAL8X6svEg==
 
-"@biomejs/cli-linux-x64@2.3.14":
-  version "2.3.14"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-x64/-/cli-linux-x64-2.3.14.tgz#d152e61c6dc847836ebc741fb70fe305414aa7fe"
-  integrity sha512-ZsZzQsl9U+wxFrGGS4f6UxREUlgHwmEfu1IrXlgNFrNnd5Th6lIJr8KmSzu/+meSa9f4rzFrbEW9LBBA6ScoMA==
+"@biomejs/cli-linux-x64@2.4.6":
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-x64/-/cli-linux-x64-2.4.6.tgz#0425067dae8bb7a6cee4485d1c85184d1f65977a"
+  integrity sha512-oHXmUFEoH8Lql1xfc3QkFLiC1hGR7qedv5eKNlC185or+o4/4HiaU7vYODAH3peRCfsuLr1g6v2fK9dFFOYdyw==
 
-"@biomejs/cli-win32-arm64@2.3.14":
-  version "2.3.14"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-win32-arm64/-/cli-win32-arm64-2.3.14.tgz#2c59e84f3d172bada2a1df94d6cf7e511c244a4e"
-  integrity sha512-+IKYkj/pUBbnRf1G1+RlyA3LWiDgra1xpS7H2g4BuOzzRbRB+hmlw0yFsLprHhbbt7jUzbzAbAjK/Pn0FDnh1A==
+"@biomejs/cli-win32-arm64@2.4.6":
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-win32-arm64/-/cli-win32-arm64-2.4.6.tgz#edbe905ac4c836a3a27cf92e123b88f24d505f0f"
+  integrity sha512-xzThn87Pf3YrOGTEODFGONmqXpTwUNxovQb72iaUOdcw8sBSY3+3WD8Hm9IhMYLnPi0n32s3L3NWU6+eSjfqFg==
 
-"@biomejs/cli-win32-x64@2.3.14":
-  version "2.3.14"
-  resolved "https://registry.yarnpkg.com/@biomejs/cli-win32-x64/-/cli-win32-x64-2.3.14.tgz#44405162f255fe153a5ff99379510c058bf7a1e8"
-  integrity sha512-oizCjdyQ3WJEswpb3Chdngeat56rIdSYK12JI3iI11Mt5T5EXcZ7WLuowzEaFPNJ3zmOQFliMN8QY1Pi+qsfdQ==
+"@biomejs/cli-win32-x64@2.4.6":
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-win32-x64/-/cli-win32-x64-2.4.6.tgz#98bb4bcf11080cb8327fa6f52c649c09bb1ceb17"
+  integrity sha512-7++XhnsPlr1HDbor5amovPjOH6vsrFOCdp93iKXhFn6bcMUI6soodj3WWKfgEO6JosKU1W5n3uky3WW9RlRjTg==
 
 "@ctrl/tinycolor@^3.4.1":
   version "3.6.1"
